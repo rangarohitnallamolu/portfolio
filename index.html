@@ -61,11 +61,12 @@
 
 		<!-- Header -->
 			<section id="header">
+				<canvas id="network-canvas"></canvas>
 				<div class="inner">
-					
+
 					<h1>Hi, I'm <strong>Ranga Rohit Nallamolu</strong><br />
-						a Computer Science Graduate from UMass Lowell</h1>
-					<p>Looking for Data Engineer Position<br /></p>
+						a data science professional with 3+ years of experience</h1>
+					<p><span id="typewriter"></span><span id="typewriter-cursor">&nbsp;</span><br /></p>
 					<ul class="actions special">
 						<li><a href="#one" class="button scrolly">About Me</a></li>
 					</ul>
@@ -80,13 +81,17 @@
 							<header class="major">
 								<h2>ABOUT ME<br /></h2>
 							</header>
-							<p>As a skilled Data Engineer with a Master's degree in Computer Science from the University of Massachusetts Lowell, I am passionate about leveraging data to drive 
-								innovation and solve complex problems. With a strong foundation in data analysis and machine learning, I am proficient in a variety of tools and technologies, 
-								including Python, Java, SQL, AWS, Azure, GCP, Spark, Kafka, and more.</p>
+							<p>As a results-driven data professional with 3+ years of experience across data engineering, data analytics, and data science, I specialize in transforming raw data
+								 into actionable insights that drive strategic decision-making. I bring a well-rounded skill set spanning cloud platforms (AWS, Azure, GCP), big data technologies
+								  (Spark, Kafka), and advanced analytics tools (Python, SQL, R, TensorFlow, Power BI, Tableau, SAP Analytics Cloud).</p>
 
-                            <p>Throughout my career, I have successfully designed, implemented, and optimized data pipelines to extract valuable insights from large datasets. I have experience
-								 in building robust data engineering solutions, including data ingestion, transformation, and analysis. I am also skilled in machine learning, with expertise in 
-								 developing and deploying predictive models.</p>
+                            <p>I have led end-to-end development and deployment of scalable data pipelines, designed ELT workflows, and implemented machine learning models for forecasting,
+								 classification, and optimization. I’ve deployed predictive models and analytics solutions into production environments using CI/CD pipelines, containerization
+								  (Docker), and orchestration tools.</p>
+
+                            <p>My industry experience spans healthcare, finance and education, delivering solutions that improve operational efficiency, automation, and enable 
+								real-time, predictive insights. With hands-on expertise in platforms like Snowflake, Databricks, and SAC, I bridge the gap between data engineering and data science
+								 to deliver business-ready solutions at scale.</p>
 
                             <p>Outside of my professional life, I enjoy playing cricket for fun and am a professional Badminton player, which has instilled in me discipline, teamwork,
 								 and dedication to achieving excellence in every endeavor.</p>
@@ -103,87 +108,261 @@
 				</div>
 			</section>
 
-		
+
+
+
+
+
+
+
+			<section id="three" class="main style2 special">
+				<div class="container">
+					<header class="major">
+						<h2>Work Experience</h2>
+					</header>
+			            <!-- Box 1 -->
+						<div class="work-card" onclick="openModal('modal1')">
+							<h3>ERP Specialist</h3>
+							<h5>Mckesson, Dallas, TX</h5>
+							<h6>Dec 2024 - Present</h6>
+						</div>
+
+						<!-- Modal for 1 -->
+						<div id="modal1" class="modal">
+							<div class="modal-content">
+								<span class="close" onclick="closeModal('modal1')">&times;</span>
+								<h3>ERP Specialist - Mckesson, Dallas, TX</h3>
+								<p>
+									• Developed automated Segment P&L reports in SAC, reducing manual effort by 70%<br>
+									• Integrated ELT pipelines from SAP, Azure & Snowflake<br>
+									• Improved forecast accuracy by 15% via SAC Time Series Forecasting<br>
+									• Reduced data loading times by 20%
+								</p>
+							</div>
+						</div>
+					     <!-- Box 2 -->
+						<div class="work-card" onclick="openModal('modal2')">
+							<h3>Data Engineer</h3>
+							<h5>University of Massachusetts, Lowell MA</h5>
+							<h6>Dec 2022 - May 2024</h6>
+						</div>
+
+						<!-- Modal for 2 -->
+						<div id="modal2" class="modal">
+							<div class="modal-content">
+								<span class="close" onclick="closeModal('modal2')">&times;</span>
+								<h3>Data Engineer - University of Massachusetts, Lowell MA</h3>
+								<p>
+									• Developed automated Segment P&L reports in SAC, reducing manual effort by 70%<br>
+									• Integrated ELT pipelines from SAP, Azure & Snowflake<br>
+									• Improved forecast accuracy by 15% via SAC Time Series Forecasting<br>
+									• Reduced data loading times by 20%
+								</p>
+							</div>
+						</div>
+			            
+						  <!-- Box 3 -->
+						  <div class="work-card" onclick="openModal('modal3')">
+							<h3>Research Assistant</h3>
+							<h5>University of Massachusetts, Lowell MA</h5>
+							<h6>Dec 2022 - Nov 2023</h6>
+						</div>
+
+						<!-- Modal for 3 -->
+						<div id="modal3" class="modal">
+							<div class="modal-content">
+								<span class="close" onclick="closeModal('modal3')">&times;</span>
+								<h3>Research Assistant - University of Massachusetts, Lowell MA</h3>
+								<p>
+									• Developed automated Segment P&L reports in SAC, reducing manual effort by 70%<br>
+									• Integrated ELT pipelines from SAP, Azure & Snowflake<br>
+									• Improved forecast accuracy by 15% via SAC Time Series Forecasting<br>
+									• Reduced data loading times by 20%
+								</p>
+							</div>
+						</div>
+
+						<!-- Box 4 -->
+						<div class="work-card" onclick="openModal('modal4')">
+							<h3>Data Engineer</h3>
+							<h5>Anakin, Bangalore, India</h5>
+							<h6>Mar 2021 - Jul 2022</h6>
+						</div>
+
+						<!-- Modal for 4 -->
+						<div id="modal4" class="modal">
+							<div class="modal-content">
+								<span class="close" onclick="closeModal('modal4')">&times;</span>
+								<h3>Data Engineer - Anakin, Bangalore, India</h3>
+								<p>
+									• Developed automated Segment P&L reports in SAC, reducing manual effort by 70%<br>
+									• Integrated ELT pipelines from SAP, Azure & Snowflake<br>
+									• Improved forecast accuracy by 15% via SAC Time Series Forecasting<br>
+									• Reduced data loading times by 20%
+								</p>
+							</div>
+						</div>
+                        
+						<!-- Box 5 -->
+						<div class="work-card" onclick="openModal('modal5')">
+							<h3>Junior Web Developer</h3>
+							<h5>HealthyGx, Hyderabad, India</h5>
+							<h6>Apr 2019 - May 2019</h6>
+						</div>
+
+						<!-- Modal for 5 -->
+						<div id="modal5" class="modal">
+							<div class="modal-content">
+								<span class="close" onclick="closeModal('modal5')">&times;</span>
+								<h3>Junior Web Developer - HealthyGx, Hyderabad, India</h3>
+								<p>
+									• Developed automated Segment P&L reports in SAC, reducing manual effort by 70%<br>
+									• Integrated ELT pipelines from SAP, Azure & Snowflake<br>
+									• Improved forecast accuracy by 15% via SAC Time Series Forecasting<br>
+									• Reduced data loading times by 20%
+								</p>
+							</div>
+						</div>
+
+
+
+
+						
+			</section>
+			
+
+
+
 
 		
-<!-- Work Experience -->
-<section id="three" class="main style2 special">
-    <div class="container">
-        <header class="major">
-            <h2>Work Experience</h2>
-        </header>
-        
-        <div class="row gtr-150">
-            <div class="col-12">
-                <div class="work-experience">
-                    
-                    <!-- Data Engineering at UML -->
-                    <div class="main style2 special">
-                        
-                        <h3>Data Engineer</h3>
-                        <h5>University of Massachusetts Lowell </h5>
-                        <p>Leveraging AWS technologies like EC2, S3, Lambda, and Redshift, 
-							I've designed and implemented efficient data pipelines to ETL data into 
-							a Cassandra data warehouse, reducing manual effort by 60%. I've also built 
-							real-time data monitoring systems using CloudWatch and Lambda to ensure data 
-							integrity and minimize downtime. By optimizing data warehouse queries and automating
-							 validation processes, I've significantly improved data quality and performance.</p>
-                        
-                    </div>
-                    
-                    <!-- Research Assistant -->
-                    <div class="main style2 special">
-                        
-                        <h3>Research Assistant</h3>
-                        <h5>University of Massachusetts, Lowell, MA</h5>
-                        <p>Utilizing Azure's cloud infrastructure, I designed and implemented data pipelines to process and analyze extensive microbial data.
-							 This analysis led to the discovery of a strong correlation between Coprococcus bacteria and diabetes. I further enhanced these 
-							 insights by developing and validating machine learning models, achieving an accuracy of 85% in predicting diabetes risk.
-							 To effectively communicate these findings, I created interactive visualizations using Power BI and collaborated with diverse
-							  teams to foster a data-driven approach to healthcare research.</p>
-                       
-                    </div>
-                    
-                    <!-- Data Engineer -->
-                    <div class="main style2 special">
-                        
-                        <h3>Data Engineer</h3>
-                        <h5>Anakin, Bangalore, India</h5>
-                        <p>Leveraging AWS services such as EC2, S3, Lambda, and Redshift, I engineered robust data pipelines that processed over 10 million records daily, resulting in a 20% efficiency boost. 
-							By optimizing data ingestion and transformation processes with Apache Spark and AWS, I achieved a 30% increase in processing speed while ensuring data integrity.
-							 I also implemented CI/CD pipelines using Jenkins, AWS CodePipeline, and Kubernetes to automate deployments and reduce downtime. Additionally,
-							  I designed a scalable Hive data model for a large data lake, handling over 10 million daily transactions with 99.9% accuracy.</p>
-                        
-                    </div>
-                    
-                    <!-- Junior Web Developer -->
-                    <div class="main style2 special">
-                        
-                        <h3>Junior Web Developer</h3>
-                        <h5>HealthyGx, Hyderabad, India</h5>
-                        <p>Orchestrated the web development process, skillfully transforming conceptual mock-ups into a fully functional web presence through precise HTML and JavaScript coding.<br /> 
-								Diligently undertook code debugging and fine-tuning of front-end applications to ensure seamless user interactions.<br />
-							 	Implemented optimization strategies, significantly reducing page size and load times, thereby elevating the overall user experience.</p>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 
                       
 
 		<!-- Projects -->
+
+
+
+
+
+
+		
 		<section id="four" class="main style2 special">
 			<div class="container">
 				<header class="major">
-					<h2>Hands on Projects</h2>		
+					<h2>Projects</h2>		
 				</header>
 				<ul class="features">
-					
+					<!-- Box 11 -->
+					<div class="work-card" onclick="openModal('modal11')">
 						<h3>Multi Label Ocular Disease Classification</h3>
+						
+					</div>
+
+					<!-- Modal for 11 -->
+					<div id="modal11" class="modal">
+						<div class="modal-content">
+							<span class="close" onclick="closeModal('modal11')">&times;</span>
+							
+							<p> Employed deep learning techniques to classify multi-label ocular diseases using an 8000-sample dataset collected from Chinese
+								medical institutions. Achieved a 60% accuracy rate and a 0.76 AUC score utilizing InceptionNet.<br />
+								Balanced dataset frequencies and assessed VGGNet, ResNet, DenseNet, and InceptionNet performance using key metrics like Accuracy, AUC, Precision,
+								 Recall, and F1-Score. <br />
+								 InceptionNet emerged as the top performer, achieving 60% accuracy and 0.76 AUC, demonstrating superior capability in distinguishing between ocular 
+								 disease classes with consistently higher precision, recall, and F1-Score scores.</p>
+							   <ul class="actions special">
+								   <li><a href="https://github.com/nishatcherian/Group5_MultiLabel_OcularDiseaseClassificiation" class="button" target="_blank">More</a></li>
+							   </ul>
+						</div>
+					</div>
+
+					<!-- Box 12 -->
+					<div class="work-card" onclick="openModal('modal12')">
+						<h3>Image Caption Generator with Accessibility Features</h3>
+						
+					</div>
+
+					<!-- Modal for 12 -->
+					<div id="modal12" class="modal">
+						<div class="modal-content">
+							<span class="close" onclick="closeModal('modal12')">&times;</span>
+							
+							<p> Leveraged cutting-edge computer vision and natural language processing techniques to develop an image caption generator, 
+								bridging the gap between the visual world and individuals with visual impairments.<br />
+								Implemented deep learning methodologies, utilizing Convolutional Neural Networks (CNN) for image feature extraction, 
+								Recurrent Neural Networks (RNN) with Long Short Term Memory (LSTM) architectures, and the Flickr 8k dataset with 8000 images
+								 for generating coherent textual descriptions.<br />
+								This comprehensive approach was employed to train the advanced model, which achieved a remarkable BLEU score of 0.35, 
+								demonstrating its capability to describe visual content and enhance accessibility through speech conversion.</p>
+								<ul class="actions special">
+									<li><a href="https://github.com/rangarohitnallamolu/Image-Caption-Generator-with-Accessibility-Features" class="button" target="_blank">More</a></li>
+								</ul>
+						</div>
+					</div>
+					<!-- Box 13 -->
+					<div class="work-card" onclick="openModal('modal13')">
+						<h3>Adversarial attack on Text classification</h3>
+						
+					</div>
+
+					<!-- Modal for 13 -->
+					<div id="modal13" class="modal">
+						<div class="modal-content">
+							<span class="close" onclick="closeModal('modal13')">&times;</span>
+							
+							<p> Employed advanced data poisoning techniques, specifically Semantic Poisoning and Keyword Poisoning, on both the MNIST dataset
+								and spam and ham datasets to assess the vulnerability of text classification models to adversarial attacks.<br />
+							   This strategic approach demonstrated a significant and noteworthy impact on models trained with both the spam and ham dataset 
+							   and the MNIST dataset, especially when employing a minimal epsilon value of 0.3.<br />
+								Developed a robust defense mechanism through adversarial training, achieving a remarkable 20% enhancement in the MNIST dataset
+							   -trained model and an 8% improvement in the defense efficacy of the spam and ham dataset-trained model.</p>
+							   <ul class="actions special">
+								   <li><a href="https://github.com/rangarohitnallamolu/Adversarial-attack-on-Images-numbers-Classification-model" class="button" target="_blank">More</a></li>
+							   </ul>
+						</div>
+					</div>
+
+
+					<!-- Box 14 -->
+					<div class="work-card" onclick="openModal('modal14')">
+						<h3>Bank Customer Churn Prediction</h3>
+						
+					</div>
+
+					<!-- Modal for 14 -->
+					<div id="modal14" class="modal">
+						<div class="modal-content">
+							<span class="close" onclick="closeModal('modal14')">&times;</span>
+							
+							<p> Developed predictive models with KNeighbors, Random Forest, and XGBoost to identify potential bank customer churn using data patterns and features.<br />
+								Evaluated model performance using XGBoost and Random Forest, achieving near-perfect ROC-AUC scores of 0.9895 and 0.9879, demonstrating effective churn prediction across classes.</p>
+							<ul class="actions special">
+								<li><a href="https://github.com/rangarohitnallamolu/Bank-Churn-Prediction" class="button" target="_blank">More</a></li>
+							</ul>
+						</div>
+					</div>
+					
+
+					<!-- Box 15 -->
+					<div class="work-card" onclick="openModal('modal15')">
+						<h3>E-Commerce website</h3>
+						
+					</div>
+
+					<!-- Modal for 15 -->
+					<div id="modal15" class="modal">
+						<div class="modal-content">
+							<span class="close" onclick="closeModal('modal15')">&times;</span>
+							
+							<p>Designed and implemented an e-commerce platform focused on camera and accessory sales, utilizing JavaScript, HTML, and CSS.<br />
+								During implementation, incorporated the Apriori algorithm in the development phase to enhance product recommendations for camera
+								 enthusiasts, resulting in a notable 13% boost in sales.</p>
+								 <ul class="actions special">
+									<li><a href="#" class="button">More</a></li>
+								</ul>
+						</div>
+					</div>
+						<!-- <h3>Multi Label Ocular Disease Classification</h3>
 						<p> Employed deep learning techniques to classify multi-label ocular diseases using an 8000-sample dataset collected from Chinese
 							 medical institutions. Achieved a 60% accuracy rate and a 0.76 AUC score utilizing InceptionNet.<br />
 							 Balanced dataset frequencies and assessed VGGNet, ResNet, DenseNet, and InceptionNet performance using key metrics like Accuracy, AUC, Precision,
@@ -193,9 +372,9 @@
 							<ul class="actions special">
 								<li><a href="https://github.com/nishatcherian/Group5_MultiLabel_OcularDiseaseClassificiation" class="button" target="_blank">More</a></li>
 							</ul>
+					 -->
 					
-					
-						<h3>Image Caption Generator with Accessibility Features</h3>
+						<!-- <h3>Image Caption Generator with Accessibility Features</h3>
 						<p> Leveraged cutting-edge computer vision and natural language processing techniques to develop an image caption generator, 
 							bridging the gap between the visual world and individuals with visual impairments.<br />
 							Implemented deep learning methodologies, utilizing Convolutional Neural Networks (CNN) for image feature extraction, 
@@ -235,7 +414,7 @@
 						    Evaluated model performance using XGBoost and Random Forest, achieving near-perfect ROC-AUC scores of 0.9895 and 0.9879, demonstrating effective churn prediction across classes.</p>
 						<ul class="actions special">
 							<li><a href="https://github.com/rangarohitnallamolu/Bank-Churn-Prediction" class="button" target="_blank">More</a></li>
-						</ul>
+						</ul> -->
 					
 				</ul>
 			</div>
@@ -276,6 +455,10 @@
 </section>
 
 <!-- Achievements -->
+
+
+
+
 <section id="six" class="main style2 special">
     <div class="container">
         <header class="major">
@@ -288,7 +471,62 @@
 				<header class="major">
 					<h3>Cricket</h3>
 				</header>
-				<div class="achievement-horizontal" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+				<div class="achievement-horizontal">
+					<div class="achievement-item" onclick="openModal('modal21')">
+					  <img src="images/HSL.jpg" alt="Hoyasola Super League">
+					  <div class="caption">Hoyasola Super League 2024 Champions</div>
+					</div>
+					<div class="achievement-item" onclick="openModal('modal22')">
+					  <img src="images/ISA2.jpg" alt="ISA Season 2">
+					  <div class="caption">ISA Premier League Season 2, 2024 – UMass Lowell</div>
+					</div>
+					<div class="achievement-item" onclick="openModal('modal23')">
+					  <img src="images/scg.jpg" alt="SCG Premier League">
+					  <div class="caption">SCG Premier League 2022 – Hyderabad</div>
+					</div>
+				  </div>
+				  <div class="achievement-item" onclick="openModal('modal24')">
+					<img src="images/MOM1.JPG" alt="Massachusetts State Premier League">
+					<div class="caption">Massachusetts State Premier League 2024</div>
+				  </div>
+				</div>
+				  
+				  <!-- Modals -->
+				  <div id="modal21" class="modal">
+					<div class="modal-content">
+					  <span class="close" onclick="closeModal('modal21')">&times;</span>
+					  <img src="images/HSL.jpg" alt="Full HSL Image" class="modal-image">
+					  <p>Hoyasola Super League 2024 Champions</p>
+					</div>
+				  </div>
+				  
+				  <div id="modal22" class="modal">
+					<div class="modal-content">
+					  <span class="close" onclick="closeModal('modal22')">&times;</span>
+					  <img src="images/ISA2.jpg" alt="Full ISA2 Image" class="modal-image">
+					  <p>Indian Student Association Premier League Season 2, 2024 – UMass Lowell</p>
+					</div>
+				  </div>
+				  
+				  <div id="modal23" class="modal">
+					<div class="modal-content">
+					  <span class="close" onclick="closeModal('modal23')">&times;</span>
+					  <img src="images/scg.jpg" alt="Full SCG Image" class="modal-image">
+					  <p>SCG Premier League 2022 – Hyderabad</p>
+					</div>
+				  </div>
+
+				  <div id="modal23" class="modal">
+					<div class="modal-content">
+					  <span class="close" onclick="closeModal('modal24')">&times;</span>
+					  <img src="images/MOM1.JPG" alt="Full SCG Image" class="modal-image">
+					  <p>Massachusetts State Premier League 2024</p>
+					</div>
+				  </div>
+
+
+
+				<!-- <div class="achievement-horizontal" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
 					<div class="achievement-item" style="width: 48%; margin-bottom: 70px;">
 						<img src="images/HSL.jpg" alt="Hoyasola Super League" class="achievement-img" style="width: 100%;">
 						<p>Hoyasola Super League 2024 Champions </p>
@@ -302,7 +540,7 @@
 						<p>SCG Premier League 2022- Hyderabad </p> 
 					</div>
 				</div>
-			</div>
+			</div> -->
 			
 			
 			            
@@ -311,7 +549,91 @@
                 <header class="major">
                     <h3>Badminton</h3>
                 </header>
-			<div class="achievement-horizontal" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+				
+					<div class="achievement-horizontal">
+					<div class="achievement-item" onclick="openModal('modal31')">
+						<img src="images/statec.jpg" alt="Telangana State Champion">
+						<div class="caption">Telangana State Champion 2015</div>
+					</div>
+					<div class="achievement-item" onclick="openModal('modal32')">
+						<img src="images/TOI2015.jpg" alt="Times Of India Champion">
+						<div class="caption">Times of India Champion 2015</div>
+					</div>
+					<div class="achievement-item" onclick="openModal('modal33')">
+						<img src="images/IMS1.jpg" alt="UML Badminton 2022">
+						<div class="caption">UML Badminton Champions 2022</div>
+					</div>
+					<div class="achievement-item" onclick="openModal('modal34')">
+						<img src="images/Nexus1.jpg" alt="UML Badminton 2022">
+						<div class="caption">UML Badminton Champions 2022</div>
+					</div>
+					<div class="achievement-item" onclick="openModal('modal35')">
+						<img src="images/FriscoOpen1.JPG" alt="UML Badminton 2022">
+						<div class="caption">UML Badminton Champions 2022</div>
+					</div>
+					
+					<!-- Modals -->
+					<div id="modal31" class="modal">
+					<div class="modal-content">
+						<span class="close" onclick="closeModal('modal31')">&times;</span>
+						<img src="images/statec.jpg" alt="Full Telangana State Champion" class="modal-image">
+						<p>Telangana State Champion 2015</p>
+					</div>
+					</div>
+				
+					<div id="modal32" class="modal">
+					<div class="modal-content">
+						<span class="close" onclick="closeModal('modal32')">&times;</span>
+						<img src="images/TOI2015.jpg" alt="Full TOI Champion" class="modal-image">
+						<p>Times of India Champion 2015</p>
+					</div>
+					</div>
+				
+					<div id="modal33" class="modal">
+					<div class="modal-content">
+						<span class="close" onclick="closeModal('modal33')">&times;</span>
+						<img src="images/IMS1.jpg" alt="Full UML 2022" class="modal-image">
+						<p>University of Massachusetts Lowell Badminton Champions 2022</p>
+					</div>
+					</div>
+
+					<div id="modal33" class="modal">
+						<div class="modal-content">
+							<span class="close" onclick="closeModal('modal34')">&times;</span>
+							<img src="images/Nexus1.JPG" alt="Nexus Open 2025" class="modal-image">
+							<p>Nexus Open 2025 Bronze medalist</p>
+					</div>
+					</div>
+
+					<div id="modal33" class="modal">
+						<div class="modal-content">
+							<span class="close" onclick="closeModal('modal35')">&times;</span>
+							<img src="images/FriscoOpen1.JPG" alt="Frisco Open 2025" class="modal-image">
+							<p>Frisco Open 2025 Bronze medalist</p>
+					</div>
+					</div>
+
+				
+					
+				
+
+				<!-- <div class="achievement-item" onclick="openModal('modal34')">
+					<img src="images/IMS2.jpg" alt="UML Badminton 2023">
+					<div class="caption">UML Badminton Champions 2023</div>
+				</div>
+				</div>
+			    
+				<div id="modal34" class="modal">
+					<div class="modal-content">
+						<span class="close" onclick="closeModal('modal34')">&times;</span>
+						<img src="images/IMS2.jpg" alt="Full UML 2023" class="modal-image">
+						<p>University of Massachusetts Lowell Badminton Champions 2023</p>
+					</div>
+					</div>
+				</div> -->
+
+
+			    <!-- <div class="achievement-horizontal" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
 				<div class="achievement-item">
 					<img src="images/statec.jpg" alt=" Telangana State Champions" class="achievement-img" style="width: 100%;">
 					<p>Telangana State Champion 2015</p>
@@ -329,7 +651,7 @@
 					<p>University of Massachusetts Lowell Badminton Champions 2023 </p>
 				</div>
 				
-			</div>
+			</div> -->
 				
                 
             </div>
@@ -369,6 +691,9 @@
 			
 		</footer>
 
+
+		
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -376,6 +701,28 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-            
+			<script src="assets/js/animations.js"></script>
+
+			
+			<script>
+				function openModal(id) {
+					document.getElementById(id).style.display = "block";
+				}
+				
+				function closeModal(id) {
+					document.getElementById(id).style.display = "none";
+				}
+				
+				// Optional: Close modal if user clicks outside the modal content
+				window.onclick = function(event) {
+					const modals = document.querySelectorAll(".modal");
+					modals.forEach(modal => {
+						if (event.target == modal) {
+							modal.style.display = "none";
+						}
+					});
+				};
+				</script>
+				
 	</body>
 </html>

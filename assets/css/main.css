@@ -2447,11 +2447,13 @@ input, select, textarea {
 		list-style: none;
 		margin-left: -1em;
 		padding-left: 0;
+		
 	}
 
 		ul.actions li {
 			padding: 0 0 0 1em;
 			vertical-align: middle;
+			
 		}
 
 		ul.actions.special {
@@ -3535,3 +3537,266 @@ input, select, textarea {
 
 
 
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.work-card {
+    background: #1e1e1e;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.work-card:hover {
+    transform: scale(1.05);
+}
+
+/* MODAL STYLING */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.8);
+  }
+  
+  .modal-content {
+	background-color: #fff;
+	margin: 10% auto;
+	padding: 2rem;
+	border-radius: 8px;
+	width: 90%;
+	max-width: 600px;
+	color: #000;
+	position: relative;
+	text-align: center;
+  }
+  
+  .close {
+	color: #1e1e1e;
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	font-size: 28px;
+	cursor: pointer;
+  }
+  
+  .close:hover {
+	color: #000;
+  }
+  
+  .button {
+	display: inline-block;
+	padding: 0.75em 1.5em;
+	border-radius: 5px;
+	background-color: #1e1e1e;
+	color: #ffffff;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	border: 2px solid #1e1e1e;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	cursor: pointer;
+	line-height: 1.4;
+	width: auto;
+}
+
+.button:hover {
+	background-color: #1e1e1e !important;
+	color: #ffffff !important;
+	border-color: #1e1e1e !important;
+	transform: scale(1.05);
+	box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+
+
+/* Align buttons in modal */
+ul.actions.special {
+	justify-content: center;
+	margin-top: 1.5em;
+}
+
+
+.achievement-horizontal {
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	gap: 20px;
+	padding-bottom: 1rem;
+  }
+  
+  .achievement-item {
+	position: relative;
+	flex: 0 0 auto;
+	width: 300px;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	cursor: pointer;
+  }
+  
+  .achievement-item img {
+	width: 100%;
+	display: block;
+	transition: transform 0.3s ease;
+  }
+  
+  .achievement-item:hover {
+	transform: scale(1.05);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .caption {
+	position: absolute;
+	bottom: 0;
+	background: rgba(0,0,0,0.6);
+	color: #fff;
+	width: 100%;
+	padding: 0.5em;
+	font-size: 0.9em;
+	text-align: center;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+  }
+  
+  .achievement-item:hover .caption {
+	opacity: 1;
+  }
+  
+  /* Modal Styling */
+  .modal {
+	display: none;
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.85);
+  }
+  
+  .modal-content {
+	background-color: #fff;
+	margin: 5% auto;
+	padding: 2rem;
+	border-radius: 10px;
+	width: 90%;
+	max-width: 700px;
+	text-align: center;
+	position: relative;
+  }
+  
+  .modal-content img.modal-image {
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 1rem;
+  }
+  
+  .close {
+	color: #000;
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	font-size: 28px;
+	cursor: pointer;
+  }
+
+
+/* ------------------------------------------------------------------
+   Hero network canvas
+------------------------------------------------------------------ */
+
+#network-canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 0;
+}
+
+#header .inner {
+	position: relative;
+	z-index: 1;
+}
+
+#typewriter-cursor {
+	display: inline-block;
+	width: 2px;
+	margin-left: 2px;
+	background: rgba(255, 255, 255, 0.85);
+	animation: cursor-blink 0.9s step-end infinite;
+}
+
+@keyframes cursor-blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#typewriter-cursor { animation: none; }
+}
+
+/* ------------------------------------------------------------------
+   Scroll reveal
+------------------------------------------------------------------ */
+
+.reveal {
+	opacity: 0;
+	transform: translateY(28px);
+	transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.reveal-active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* ------------------------------------------------------------------
+   Work / project card hover glow
+------------------------------------------------------------------ */
+
+.work-card {
+	position: relative;
+	overflow: hidden;
+}
+
+.work-card:before {
+	content: '';
+	position: absolute;
+	top: 0; left: 0; right: 0;
+	height: 3px;
+	background: linear-gradient(90deg, #6bd4c8, #57aed3);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.35s ease;
+}
+
+.work-card:hover {
+	transform: translateY(-4px);
+	border-color: #6bd4c8;
+	box-shadow: 0 10px 30px rgba(107, 212, 200, 0.18);
+}
+
+.work-card:hover:before {
+	transform: scaleX(1);
+}

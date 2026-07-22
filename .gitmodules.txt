@@ -1,3 +1,0 @@
-[submodule "RangaRohitNallamolu-Portfolio"]
-    path = RangaRohitNallamolu-Portfolio
-    url = https://github.com/rangarohitnallamolu/portfolio.git
