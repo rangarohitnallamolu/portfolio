@@ -43,7 +43,7 @@
 	<body class="is-preload">
         <!-- Nav -->
 <!-- Nav -->
-<nav id="nav" style="background-color: #333; padding: 10px 0; position: fixed; width: 100%; z-index: 1000;">
+<nav id="nav" style="background: linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2); padding: 10px 0; position: fixed; width: 100%; z-index: 1000;">
     <div class="container">
         <ul class="container1" style="list-style-type: none; margin: 0; padding: 0; display: flex; justify-content: space-around;">
         
@@ -61,7 +61,7 @@
 
 		<!-- Header -->
 			<section id="header">
-				<canvas id="network-canvas"></canvas>
+				<canvas class="section-canvas" data-network></canvas>
 				<div class="inner">
 
 					<h1>Hi, I'm <strong>Ranga Rohit Nallamolu</strong><br />
@@ -75,28 +75,23 @@
 
 		<!-- One -->
 			<section id="one" class="main style2 special">
+				<canvas class="section-canvas" data-network></canvas>
 				<div class="container">
 					<div class="row gtr-150">
 						<div class="col-6 col-12-medium">
 							<header class="major">
 								<h2>ABOUT ME<br /></h2>
 							</header>
-							<p>As a results-driven data professional with 3+ years of experience across data engineering, data analytics, and data science, I specialize in transforming raw data
-								 into actionable insights that drive strategic decision-making. I bring a well-rounded skill set spanning cloud platforms (AWS, Azure, GCP), big data technologies
-								  (Spark, Kafka), and advanced analytics tools (Python, SQL, R, TensorFlow, Power BI, Tableau, SAP Analytics Cloud).</p>
+							<p>I've been drawn to data for as long as I can remember — the challenge of turning messy, disconnected information into something a business can actually act on.
+								 That curiosity is what pulled me from analytics into data engineering, and more recently into building agentic AI systems that can reason over data on their own.</p>
 
-                            <p>I have led end-to-end development and deployment of scalable data pipelines, designed ELT workflows, and implemented machine learning models for forecasting,
-								 classification, and optimization. I’ve deployed predictive models and analytics solutions into production environments using CI/CD pipelines, containerization
-								  (Docker), and orchestration tools.</p>
+                            <p>As a Data Engineer with 3+ years of experience across healthcare, finance, and education, I've designed and automated ELT pipelines across SAP, Azure, and Snowflake,
+								 built forecasting models in SAP Analytics Cloud (SAC), and worked hands-on with big data technologies like Spark and Kafka. Outside of client work, I built
+								 <strong>StockSense</strong>, a full-stack trading platform powered by a multi-agent AI pipeline (Claude API, LangChain, LangGraph) that researches, debates,
+								 and executes simulated trades — a project born from wanting to go deeper into agentic AI and RAG.</p>
 
-                            <p>My industry experience spans healthcare, finance and education, delivering solutions that improve operational efficiency, automation, and enable 
-								real-time, predictive insights. With hands-on expertise in platforms like Snowflake, Databricks, and SAC, I bridge the gap between data engineering and data science
-								 to deliver business-ready solutions at scale.</p>
-
-                            <p>Outside of my professional life, I enjoy playing cricket for fun and am a professional Badminton player, which has instilled in me discipline, teamwork,
-								 and dedication to achieving excellence in every endeavor.</p>
-
-                            <p>I am eager to contribute my skills and knowledge to a dynamic team and work on challenging projects that have a real-world impact.</p>
+                            <p>Outside of work, I play cricket for fun and compete as a badminton player — recent highlights include the Hoyasola Super League 2024 Championship and
+								 podium finishes at the Frisco Open and Nexus Open in 2025. Competitive sports have taught me the same discipline and focus I bring to solving hard data problems.</p>
 							<ul class="actions special">
 								<li><a href="RangaRohit_Resume.pdf" class="button" target = '_blank'>Resume</a></li>
 							</ul>
@@ -116,14 +111,15 @@
 
 
 			<section id="three" class="main style2 special">
+				<canvas class="section-canvas" data-network></canvas>
 				<div class="container">
 					<header class="major">
 						<h2>Work Experience</h2>
 					</header>
 			            <!-- Box 1 -->
 						<div class="work-card" onclick="openModal('modal1')">
-							<h3>ERP Specialist</h3>
-							<h5>Mckesson, Dallas, TX</h5>
+							<h3>Data Engineer</h3>
+							<h5>BigBlue InfoTech (Client: Mckesson), Dallas, TX</h5>
 							<h6>Dec 2024 - Present</h6>
 						</div>
 
@@ -131,12 +127,12 @@
 						<div id="modal1" class="modal">
 							<div class="modal-content">
 								<span class="close" onclick="closeModal('modal1')">&times;</span>
-								<h3>ERP Specialist - Mckesson, Dallas, TX</h3>
+								<h3>Data Engineer - BigBlue InfoTech (Client: Mckesson), Dallas, TX</h3>
 								<p>
-									• Developed automated Segment P&L reports in SAC, reducing manual effort by 70%<br>
-									• Integrated ELT pipelines from SAP, Azure & Snowflake<br>
-									• Improved forecast accuracy by 15% via SAC Time Series Forecasting<br>
-									• Reduced data loading times by 20%
+									• Designed and automated ELT pipelines powering Segment P&L reporting in SAP Analytics Cloud (SAC), reducing manual reporting effort by 70%<br>
+									• Built and integrated ELT data pipelines across SAP, Azure, and Snowflake to consolidate enterprise data sources<br>
+									• Engineered time-series forecasting data models in SAC, improving forecast accuracy by 15%<br>
+									• Optimized data pipeline performance, reducing data loading times by 20%
 								</p>
 							</div>
 						</div>
@@ -183,13 +179,13 @@
 						</div>
 
 						<!-- Box 4 -->
-						<div class="work-card" onclick="openModal('modal4')">
+						<!-- <div class="work-card" onclick="openModal('modal4')">
 							<h3>Data Engineer</h3>
 							<h5>Anakin, Bangalore, India</h5>
 							<h6>Mar 2021 - Jul 2022</h6>
-						</div>
+						</div> -->
 
-						<!-- Modal for 4 -->
+						<!-- Modal for 4
 						<div id="modal4" class="modal">
 							<div class="modal-content">
 								<span class="close" onclick="closeModal('modal4')">&times;</span>
@@ -201,17 +197,17 @@
 									• Reduced data loading times by 20%
 								</p>
 							</div>
-						</div>
+						</div> -->
                         
 						<!-- Box 5 -->
-						<div class="work-card" onclick="openModal('modal5')">
+						<!-- <div class="work-card" onclick="openModal('modal5')">
 							<h3>Junior Web Developer</h3>
-							<h5>HealthyGx, Hyderabad, India</h5>
+							<h5>HealthyGx, Hyderabad, India</h5> 
 							<h6>Apr 2019 - May 2019</h6>
-						</div>
+						</div> -->
 
 						<!-- Modal for 5 -->
-						<div id="modal5" class="modal">
+						<!-- <div id="modal5" class="modal">
 							<div class="modal-content">
 								<span class="close" onclick="closeModal('modal5')">&times;</span>
 								<h3>Junior Web Developer - HealthyGx, Hyderabad, India</h3>
@@ -222,7 +218,7 @@
 									• Reduced data loading times by 20%
 								</p>
 							</div>
-						</div>
+						</div> -->
 
 
 
@@ -248,15 +244,35 @@
 
 		
 		<section id="four" class="main style2 special">
+			<canvas class="section-canvas" data-network></canvas>
 			<div class="container">
 				<header class="major">
 					<h2>Projects</h2>		
 				</header>
 				<ul class="features">
+					<!-- Box 10: StockSense -->
+					<div class="work-card" onclick="openModal('modal10')">
+						<h3>StockSense</h3>
+
+					</div>
+
+					<!-- Modal for 10 -->
+					<div id="modal10" class="modal">
+						<div class="modal-content">
+							<span class="close" onclick="closeModal('modal10')">&times;</span>
+
+							<p>A full-stack stock analysis and paper-trading platform. Next.js + AWS (Cognito, RDS) frontend with real portfolio tracking, watchlists, alerts, and stock analysis, backed by a multi-agent AI trading pipeline.<br />
+								Specialized agents (data, news, bull, bear, judge, risk, execution, monitor) research, argue both sides of a trade, size risk, and execute simulated trades — orchestrated on a schedule with per-agent cost tracking against an LLM API.</p>
+							<ul class="actions special">
+								<li><a href="https://github.com/rangarohitnallamolu/stocksense" class="button" target="_blank">More</a></li>
+							</ul>
+						</div>
+					</div>
+
 					<!-- Box 11 -->
 					<div class="work-card" onclick="openModal('modal11')">
 						<h3>Multi Label Ocular Disease Classification</h3>
-						
+
 					</div>
 
 					<!-- Modal for 11 -->
@@ -421,6 +437,7 @@
 		</section>
 		<!-- Skills and Certifications -->
 <section id="five" class="main style2 special">
+<canvas class="section-canvas" data-network></canvas>
     <div class="container">
         <header class="major">
             <h2>Skills & Certifications</h2>
@@ -433,11 +450,11 @@
                 <header class="major">
                     <h3>Skills</h3>
                 </header>
-                <p> <b>Programming: </b>Python, R , Java, C#, C, JavaScript, HTML, CSS, SQL, NoSQL <br /> 
-					<b>Data Engineering: </b> AWS, Azure, GCP, Snowflake, DBT,AirFlow, Kafka, MySQL, DynamoDB, Cassandra, PostgreSQL <br /> 
-					<b>DevOps: </b> Kubernetes, Ansible, Jenkins, Docker<br />   
-					<b>Visualization Tools:</b> Tableau , Power BI, Matplotlib  <br />
-					<b>libraries:</b> NumPy,Pandas, TensorFlow,  Scikit Learn, Masslin <br /> </p>
+                <p> <b>Data Engineering: </b> AWS, Azure, GCP, Snowflake, DBT, Airflow, Spark, Kafka, MySQL, DynamoDB, Cassandra, PostgreSQL, SAP Analytics Cloud (SAC), SAP Datasphere <br />
+					<b>Agentic AI & LLMs: </b> Claude API, LangChain, LangGraph, Multi-Agent Orchestration, RAG (Retrieval-Augmented Generation) <br />
+					<b>Programming: </b>Python, Java, Scala <br />
+					<b>DevOps: </b> Kubernetes, Ansible, Jenkins, Docker<br />
+					<b>Visualization Tools:</b> Tableau , Power BI, Matplotlib  <br /> </p>
             </div>
 			
             
@@ -460,6 +477,7 @@
 
 
 <section id="six" class="main style2 special">
+<canvas class="section-canvas" data-network></canvas>
     <div class="container">
         <header class="major">
             <h2>Achievements</h2>
@@ -484,12 +502,11 @@
 					  <img src="images/scg.jpg" alt="SCG Premier League">
 					  <div class="caption">SCG Premier League 2022 – Hyderabad</div>
 					</div>
+					<div class="achievement-item" onclick="openModal('modal24')">
+					  <img src="images/MOM1.JPG" alt="Massachusetts State Premier League">
+					  <div class="caption">Massachusetts State Premier League 2024</div>
+					</div>
 				  </div>
-				  <div class="achievement-item" onclick="openModal('modal24')">
-					<img src="images/MOM1.JPG" alt="Massachusetts State Premier League">
-					<div class="caption">Massachusetts State Premier League 2024</div>
-				  </div>
-				</div>
 				  
 				  <!-- Modals -->
 				  <div id="modal21" class="modal">
@@ -516,10 +533,10 @@
 					</div>
 				  </div>
 
-				  <div id="modal23" class="modal">
+				  <div id="modal24" class="modal">
 					<div class="modal-content">
 					  <span class="close" onclick="closeModal('modal24')">&times;</span>
-					  <img src="images/MOM1.JPG" alt="Full SCG Image" class="modal-image">
+					  <img src="images/MOM1.JPG" alt="Full Massachusetts State Premier League Image" class="modal-image">
 					  <p>Massachusetts State Premier League 2024</p>
 					</div>
 				  </div>
@@ -563,15 +580,15 @@
 						<img src="images/IMS1.jpg" alt="UML Badminton 2022">
 						<div class="caption">UML Badminton Champions 2022</div>
 					</div>
-					<div class="achievement-item" onclick="openModal('modal34')">
-						<img src="images/Nexus1.jpg" alt="UML Badminton 2022">
-						<div class="caption">UML Badminton Champions 2022</div>
-					</div>
 					<div class="achievement-item" onclick="openModal('modal35')">
-						<img src="images/FriscoOpen1.JPG" alt="UML Badminton 2022">
-						<div class="caption">UML Badminton Champions 2022</div>
+						<img src="images/FriscoOpen1.JPG" alt="Frisco Open 2025 Bronze Medalist">
+						<div class="caption">Frisco Open 2025 Bronze medalist</div>
 					</div>
-					
+					<div class="achievement-item" onclick="openModal('modal36')">
+						<img src="images/frisco open winner.jpeg" alt="Frisco Open Winner 2026">
+						<div class="caption">Frisco Open Winner 2026</div>
+					</div>
+
 					<!-- Modals -->
 					<div id="modal31" class="modal">
 					<div class="modal-content">
@@ -597,19 +614,19 @@
 					</div>
 					</div>
 
-					<div id="modal33" class="modal">
-						<div class="modal-content">
-							<span class="close" onclick="closeModal('modal34')">&times;</span>
-							<img src="images/Nexus1.JPG" alt="Nexus Open 2025" class="modal-image">
-							<p>Nexus Open 2025 Bronze medalist</p>
-					</div>
-					</div>
-
-					<div id="modal33" class="modal">
+					<div id="modal35" class="modal">
 						<div class="modal-content">
 							<span class="close" onclick="closeModal('modal35')">&times;</span>
 							<img src="images/FriscoOpen1.JPG" alt="Frisco Open 2025" class="modal-image">
 							<p>Frisco Open 2025 Bronze medalist</p>
+					</div>
+					</div>
+
+					<div id="modal36" class="modal">
+						<div class="modal-content">
+							<span class="close" onclick="closeModal('modal36')">&times;</span>
+							<img src="images/frisco open winner.jpeg" alt="Frisco Open Winner 2026" class="modal-image">
+							<p>Frisco Open Winner 2026</p>
 					</div>
 					</div>
 
@@ -665,6 +682,7 @@
 
 		<!-- Footer -->
 		<footer id="footer">
+			<canvas class="section-canvas" data-network></canvas>
 			<ul class="icons">
 				
 				<li>

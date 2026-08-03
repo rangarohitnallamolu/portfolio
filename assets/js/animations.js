@@ -4,21 +4,21 @@
 	var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 	/* ---------------------------------------------------------------------
-	   Hero network canvas — a drifting data-pipeline / neural-net constellation
+	   Network canvas — a drifting data-pipeline / neural-net constellation.
+	   One instance per section, each paused via IntersectionObserver while
+	   its section is off-screen (7 sections would otherwise all animate at
+	   once, which is wasted GPU/CPU work for the ones not visible).
 	--------------------------------------------------------------------- */
-	function initNetworkCanvas() {
-		var canvas = document.getElementById('network-canvas');
-		var header = document.getElementById('header');
-		if (!canvas || !header) return;
-
+	function createNetworkAnimation(canvas, container) {
 		var ctx = canvas.getContext('2d');
 		var nodes = [];
 		var nodeCount, width, height, dpr;
 		var raf = null;
+		var running = false;
 
 		function resize() {
-			width = header.offsetWidth;
-			height = header.offsetHeight;
+			width = container.offsetWidth;
+			height = container.offsetHeight;
 			dpr = window.devicePixelRatio || 1;
 			canvas.width = width * dpr;
 			canvas.height = height * dpr;
@@ -26,7 +26,7 @@
 			canvas.style.height = height + 'px';
 			ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-			nodeCount = Math.max(18, Math.min(46, Math.round((width * height) / 26000)));
+			nodeCount = Math.max(14, Math.min(46, Math.round((width * height) / 30000)));
 			nodes = [];
 			for (var i = 0; i < nodeCount; i++) {
 				nodes.push({
@@ -42,7 +42,7 @@
 
 		var LINK_DIST = 150;
 
-		function step() {
+		function draw() {
 			ctx.clearRect(0, 0, width, height);
 
 			for (var i = 0; i < nodes.length; i++) {
@@ -84,19 +84,57 @@
 				ctx.fillStyle = 'rgba(255,255,255,' + glow.toFixed(3) + ')';
 				ctx.fill();
 			}
+		}
 
+		function step() {
+			if (!running) return;
+			draw();
 			raf = requestAnimationFrame(step);
+		}
+
+		function start() {
+			if (running || reducedMotion) return;
+			running = true;
+			raf = requestAnimationFrame(step);
+		}
+
+		function stop() {
+			running = false;
+			if (raf) cancelAnimationFrame(raf);
 		}
 
 		resize();
 		window.addEventListener('resize', resize);
 
-		if (!reducedMotion) {
-			raf = requestAnimationFrame(step);
-		} else {
-			step();
-			cancelAnimationFrame(raf);
+		if (reducedMotion) {
+			draw();
+			return;
 		}
+
+		// Start immediately — correctness must not depend on IntersectionObserver
+		// firing. Once running, use it purely as a perf optimization to pause
+		// sections that are off-screen (with 7 canvases on the page).
+		start();
+
+		if ('IntersectionObserver' in window) {
+			var io = new IntersectionObserver(
+				function (entries) {
+					entries.forEach(function (entry) {
+						if (entry.isIntersecting) start(); else stop();
+					});
+				},
+				{ threshold: 0.05 }
+			);
+			io.observe(container);
+		}
+	}
+
+	function initNetworkCanvases() {
+		var canvases = document.querySelectorAll('[data-network]');
+		canvases.forEach(function (canvas) {
+			var container = canvas.closest('section, footer') || canvas.parentElement;
+			createNetworkAnimation(canvas, container);
+		});
 	}
 
 	/* ---------------------------------------------------------------------
@@ -180,6 +218,21 @@
 			return;
 		}
 
+		function isInViewport(el) {
+			var rect = el.getBoundingClientRect();
+			return rect.top < window.innerHeight && rect.bottom > 0;
+		}
+
+		// Reveal what's already on screen immediately — don't wait on an async
+		// callback to show above-the-fold content.
+		var pending = [];
+		targets.forEach(function (el) {
+			if (isInViewport(el)) el.classList.add('reveal-active');
+			else pending.push(el);
+		});
+
+		if (!pending.length) return;
+
 		var observer = new IntersectionObserver(
 			function (entries) {
 				entries.forEach(function (entry) {
@@ -192,11 +245,18 @@
 			{ threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
 		);
 
-		targets.forEach(function (el) { observer.observe(el); });
+		pending.forEach(function (el) { observer.observe(el); });
+
+		// Safety net: if IntersectionObserver never fires for some reason,
+		// content must not stay permanently invisible.
+		setTimeout(function () {
+			pending.forEach(function (el) { el.classList.add('reveal-active'); });
+			observer.disconnect();
+		}, 4000);
 	}
 
 	document.addEventListener('DOMContentLoaded', function () {
-		initNetworkCanvas();
+		initNetworkCanvases();
 		initTypewriter();
 		initScrollReveal();
 	});
