@@ -146,7 +146,7 @@
 
 		var phrases = [
 			'Data Engineer',
-			'Data Scientist',
+			'Databricks & Spark Engineer',
 			'ML Pipeline Architect',
 			'AI-Driven Problem Solver',
 		];
