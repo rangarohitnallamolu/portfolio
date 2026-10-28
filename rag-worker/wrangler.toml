@@ -1,0 +1,12 @@
+name = "portfolio-rag"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Comma-separated origins allowed to call the worker.
+ALLOWED_ORIGINS = "https://rangarohitnallamolu.github.io,http://localhost:8090"
+# Defaults to claude-opus-5-5. claude-haiku-5-5 is far cheaper for a public chat box.
+# MODEL = "claude-haiku-5-5"
+
+# Secret (not committed): npx wrangler secret put ANTHROPIC_API_KEY

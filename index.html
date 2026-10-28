@@ -1,759 +1,464 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Ranga Rohit Nallamolu · Data Engineer</title>
+	<meta name="description" content="Ranga Rohit Nallamolu, Data Engineer building batch and streaming pipelines on Databricks, Spark, and Kafka, plus AI on top of data. Ask the built-in RAG assistant anything about Rohit." />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+	<link rel="stylesheet" href="assets/css/site.css?v=14" />
+	<script>
+		// Set endpoint to the deployed rag-worker URL to answer with Claude.
+		// Left empty, answers are composed in the browser from retrieved chunks.
+		window.RAG_CONFIG = { endpoint: '' };
+		// Palette preview while choosing a colour scheme: ?palette=midnight | ivory | graphite
+		(function () {
+			var p = new URLSearchParams(location.search).get('palette');
+			if (p) document.documentElement.setAttribute('data-palette', p);
+		})();
+	</script>
+</head>
+<body>
+	<header class="topbar">
+		<a class="brand" href="#" aria-label="Ranga Rohit Nallamolu">
+			<span class="brand-mark">RR</span>
+			<span class="brand-text"><span class="brand-name">Ranga Rohit Nallamolu</span><span class="brand-role">Data Engineer · Agentic AI</span></span>
+		</a>
+		<nav class="tabs" role="tablist" aria-label="Portfolio sections">
+			<span class="tab-indicator" aria-hidden="true"></span>
+			<button role="tab" id="tab-about" aria-controls="panel-about" aria-selected="true">About</button>
+			<button role="tab" id="tab-experience" aria-controls="panel-experience" aria-selected="false" tabindex="-1">Experience</button>
+			<button role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="false" tabindex="-1">Projects</button>
+			<button role="tab" id="tab-skills" aria-controls="panel-skills" aria-selected="false" tabindex="-1">Skills</button>
+			<button role="tab" id="tab-education" aria-controls="panel-education" aria-selected="false" tabindex="-1">Education</button>
+			<button role="tab" id="tab-achievements" aria-controls="panel-achievements" aria-selected="false" tabindex="-1">Achievements</button>
+		</nav>
+		<nav class="links" aria-label="Contact">
+			<a href="https://www.linkedin.com/in/ranga-rohit-nallamolu" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+			<a href="https://github.com/rangarohitnallamolu" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+			<a href="mailto:n.rangarohit@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+			<a href="tel:+19785697460" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+			<a class="btn btn-small" href="RangaRohit_Resume.pdf" target="_blank" rel="noopener"><i class="fas fa-file-alt"></i> Resume</a>
+		</nav>
+	</header>
 
-<html>
-	<head>
-		<title>Ranga Rohit Nallamolu Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			/* Styles for full screen */
-			body, html {
-			  margin: 0;
-			  padding: 0;
-			  height: 100%;
-			}
-			#header {
-			  height: 100vh; /* Full viewport height */
-			  display: flex;
-			  justify-content: center;
-			  align-items: center;
-			  text-align: center;
-			  background-color: #f0f0f0; /* Background color for header */
-			}
-			#header .inner {
-			  max-width: 800px; /* Adjust as needed */
-			  padding: 20px;
-			}
-			/* Styles for content */
-			h1 {
-			  font-size: 3rem;
-			  margin-bottom: 20px;
-			}
-			p {
-			  font-size: 1.5rem;
-			  margin-bottom: 20px;
-			}
-			.actions {
-			  margin-top: 20px;
-			}
-		  </style>
-	</head>
-	<body class="is-preload">
-        <!-- Nav -->
-<!-- Nav -->
-<nav id="nav" style="background: linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2); padding: 10px 0; position: fixed; width: 100%; z-index: 1000;">
-    <div class="container">
-        <ul class="container1" style="list-style-type: none; margin: 0; padding: 0; display: flex; justify-content: space-around;">
-        
-            <!-- <li><a href="#header"  class="nav-link" style="color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px;">Top</a></li> -->
-            <li><a href="#one"     class="nav-link" style="color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px;">About Me</a></li>
-            <li><a href="#three"   class="nav-link" style="color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px;">Work Experience</a></li>
-            <li><a href="#four"    class="nav-link" style="color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px;">Projects</a></li>
-            <li><a href="#five"    class="nav-link" style="color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px;">Skills and Certifications</a></li>
-            <li><a href="#six"     class="nav-link" style="color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px;">Achievements</a></li>
-			<li><a href="#footer"  class="nav-link" style="color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px;">Contact</a></li>
-        </ul>
-    </div>
-</nav>
-
-
-		<!-- Header -->
-			<section id="header">
-				<canvas class="section-canvas" data-network></canvas>
-				<div class="inner">
-
-					<h1>Hi, I'm <strong>Ranga Rohit Nallamolu</strong><br />
-						a Data Engineer with 3+ years of experience</h1>
-					<p><span id="typewriter"></span><span id="typewriter-cursor">&nbsp;</span><br /></p>
-					<ul class="actions special">
-						<li><a href="#one" class="button scrolly">About Me</a></li>
-					</ul>
-				</div>
-			</section>
-
-		<!-- One -->
-			<section id="one" class="main style2 special">
-				<canvas class="section-canvas" data-network></canvas>
-				<div class="container">
-					<div class="row gtr-150">
-						<div class="col-6 col-12-medium">
-							<header class="major">
-								<h2>ABOUT ME<br /></h2>
-							</header>
-							<p>I've been drawn to data for as long as I can remember — the challenge of turning messy, disconnected information into something a business can actually act on.
-								 That curiosity is what pulled me from analytics into data engineering, and more recently into building agentic AI systems that can reason over data on their own.</p>
-
-                            <p>As a Data Engineer with 3+ years of experience across healthcare, finance, and education, I build scalable batch and real-time pipelines on Databricks, Apache Spark, and Azure,
-								 using Delta Lake and Medallion Architecture, and I connect them to SAP Datasphere and SAP Analytics Cloud (SAC) for financial planning, forecasting, and analytics.
-								 My focus is reliable data: automated quality checks, governance, and Spark optimization. Outside of client work, I built
-								 <strong>StockSense</strong>, an AI-driven stock trading and research platform powered by multi-agent workflows (Claude, LangGraph) where Bull and Bear agents debate each trade
-								 and automated risk and stop-loss checks guard execution — a project born from wanting to go deeper into agentic AI and RAG.</p>
-
-                            <p>Outside of work, I play cricket for fun and compete as a badminton player — recent highlights include the Hoyasola Super League 2024 Championship and
-								 podium finishes at the Frisco Open and Nexus Open in 2025. Competitive sports have taught me the same discipline and focus I bring to solving hard data problems.</p>
-							<ul class="actions special">
-								<li><a href="RangaRohit_Resume.pdf" class="button" target = '_blank'>Resume</a></li>
-							</ul>
-						</div>
-						<div class="col-6 col-12-medium imp-medium">
-							<span class="image fit"><img src="images/ing1.jpg" alt="" /></span>
+	<main class="layout">
+		<!-- Sections, switched from the header tabs -->
+		<section class="col-sections">
+			<!-- About -->
+			<div class="panel" role="tabpanel" id="panel-about" aria-labelledby="tab-about">
+				<div class="hero">
+					<div class="hero-copy">
+						<p class="status"><span class="live-dot"></span> Available for Data Engineering roles · Dallas, TX</p>
+						<h1>I build data pipelines that power analytics&nbsp;&amp;&nbsp;<span class="accent">AI</span>.</h1>
+						<p class="lede">I'm Rohit, a Data Engineer with 3+ years building scalable batch and streaming pipelines with Python, PySpark, SQL, Databricks, and Kafka, and delivering financial and operational data for analytics and AI-driven insights.</p>
+						<div class="cta">
+							<button type="button" class="btn" data-open-chat><i class="fas fa-comments"></i> Ask my RAG bot</button>
+							<button type="button" class="btn btn-ghost" data-goto="projects">View projects <i class="fas fa-arrow-right"></i></button>
 						</div>
 					</div>
+					<figure class="portrait">
+						<div class="portrait-ring"><img src="images/ing1.jpg" alt="Ranga Rohit Nallamolu" /></div>
+					</figure>
 				</div>
-			</section>
 
+				<ul class="kpis">
+					<li><strong data-count="20" data-suffix="%">20%</strong><span>faster month-end close prep</span></li>
+					<li><strong data-count="15" data-suffix="%">15%</strong><span>lower Databricks compute cost</span></li>
+					<li><strong data-count="40" data-suffix="+ hrs">40+ hrs</strong><span>manual work saved per month</span></li>
+					<li><strong data-count="3" data-suffix="+ yrs">3+ yrs</strong><span>building data platforms</span></li>
+				</ul>
 
+				<div class="pillars">
+					<article class="pillar">
+						<span class="icon"><i class="fas fa-stream"></i></span>
+						<h3>Batch &amp; streaming pipelines</h3>
+						<p>PySpark ELT on Databricks and Kafka with Spark Structured Streaming into Delta Lake, using CDC and MERGE loads.</p>
+					</article>
+					<article class="pillar">
+						<span class="icon"><i class="fas fa-shield-alt"></i></span>
+						<h3>Modeling &amp; data quality</h3>
+						<p>Dimensional models with SCD Type 2, automated validation and reconciliation, and Unity Catalog access control.</p>
+					</article>
+					<article class="pillar">
+						<span class="icon"><i class="fas fa-brain"></i></span>
+						<h3>AI on top of data</h3>
+						<p>Claude classification inside pipelines, RAG chat and text-to-SQL apps, and multi-agent research tools.</p>
+					</article>
+				</div>
 
+				<div class="story">
+					<p>I've been drawn to data for as long as I can remember: the challenge of turning messy, disconnected information into something a business can act on. Today I build finance and operational pipelines for McKesson and deliver Power BI dashboards that replaced Excel reporting for finance leadership. Outside work I compete in badminton, most recently winning the <b>Frisco Open 2026</b>.</p>
+					<div class="flow" aria-label="How I build pipelines">
+						<span>Sources</span><i class="fas fa-angle-right"></i>
+						<span>Ingest + DQ</span><i class="fas fa-angle-right"></i>
+						<span>Bronze</span><i class="fas fa-angle-right"></i>
+						<span>Silver</span><i class="fas fa-angle-right"></i>
+						<span class="g">Gold</span><i class="fas fa-angle-right"></i>
+						<span>BI · RAG · Agents</span>
+					</div>
+				</div>
+			</div>
 
-
-
-
-
-			<section id="three" class="main style2 special">
-				<canvas class="section-canvas" data-network></canvas>
-				<div class="container">
-					<header class="major">
-						<h2>Work Experience</h2>
-					</header>
-			            <!-- Box 1 -->
-						<div class="work-card" onclick="openModal('modal1')">
-							<h3>Data Engineer</h3>
-							<h5>BigBlue InfoTech (Client: McKesson), Dallas, TX</h5>
-							<h6>Dec 2024 - Present</h6>
-						</div>
-
-						<!-- Modal for 1 -->
-						<div id="modal1" class="modal">
-							<div class="modal-content">
-								<span class="close" onclick="closeModal('modal1')">&times;</span>
-								<h3>Data Engineer - BigBlue InfoTech (Client: McKesson), Dallas, TX</h3>
-								<p>
-									• Engineered scalable Databricks PySpark pipelines using Medallion architecture to ingest and transform finance, transaction, and operational data, reducing data preparation time by 30% for actuals, budget, forecast, and reporting datasets<br>
-									• Implemented automated data quality and reconciliation checks for nulls, duplicates, schema drift, freshness, and source-to-target balances, saving 15+ hours per month in manual validation and troubleshooting<br>
-									• Optimized Spark performance on finance pipelines by tuning partitioning, applying caching, and right-sizing Databricks clusters, reducing job runtime and compute costs by 20% across P&L, revenue, OPEX, and headcount workloads<br>
-									• Integrated Databricks Gold-layer Delta tables with SAP Datasphere, building consumption-ready views and models that served finance datasets to SAP Analytics Cloud<br>
-									• Developed interactive SAP Analytics Cloud dashboards for P&L, revenue, OPEX, headcount, margin analysis, and reconciliation, saving 25+ hours per month in manual analysis and reporting
-								</p>
-							</div>
-						</div>
-					     <!-- Box 2 -->
-						<div class="work-card" onclick="openModal('modal2')">
-							<h3>Graduate Data Engineer</h3>
-							<h5>University of Massachusetts Lowell, MA</h5>
-							<h6>Dec 2022 - May 2024</h6>
-						</div>
-
-						<!-- Modal for 2 -->
-						<div id="modal2" class="modal">
-							<div class="modal-content">
-								<span class="close" onclick="closeModal('modal2')">&times;</span>
-								<h3>Graduate Data Engineer - University of Massachusetts Lowell, MA</h3>
-								<p>
-									• Consolidated Student, Academic, Admissions, and Finance data into Delta Lake through scalable Databricks PySpark and SQL ETL pipelines, reducing reporting time by 40%<br>
-									• Resolved duplicated transformations across analytics workloads by implementing a Bronze/Silver/Gold Medallion Architecture with Delta Lake, improving data consistency and downstream report reliability<br>
-									• Resolved slow Spark workloads by applying predicate pushdown, Delta Lake OPTIMIZE, Z-ordering, and small-file compaction, reducing pipeline execution time by 30%<br>
-									• Mitigated student data security risks by implementing Databricks Unity Catalog and RBAC, strengthening governance and supporting FERPA-compliant analytics<br>
-									• Enabled data-driven decisions on enrollment, retention, and revenue by defining KPIs with Admissions, Finance, IT, and Analytics teams and delivering Tableau dashboards
-								</p>
-							</div>
-						</div>
-			            
-						  <!-- Box 3 -->
-						  <div class="work-card" onclick="openModal('modal3')">
-							<h3>Graduate Research Assistant</h3>
-							<h5>University of Massachusetts Lowell, MA</h5>
-							<h6>Dec 2022 - Nov 2023</h6>
-						</div>
-
-						<!-- Modal for 3 -->
-						<div id="modal3" class="modal">
-							<div class="modal-content">
-								<span class="close" onclick="closeModal('modal3')">&times;</span>
-								<h3>Graduate Research Assistant - University of Massachusetts Lowell, MA</h3>
-								<p>
-									• Built scalable Azure Data Lake and Azure Databricks pipelines using PySpark and layered Delta Lake architecture to process 12 years of shotgun metagenomics data, delivering reliable, analytics-ready datasets for research and machine learning<br>
-									• Developed Random Forest and XGBoost models in Python to predict Type 2 diabetes risk from microbiome features, achieving 85% accuracy and identifying a strong positive correlation (r = 0.70) between <i>Coprococcus</i> abundance and diabetes risk<br>
-									• Developed interactive Power BI dashboards connected to Azure Databricks to visualize microbiome patterns and diabetes-related insights, enabling data-driven analysis for healthcare research
-								</p>
-							</div>
-						</div>
-
-						<!-- Box 4 -->
-						<!-- <div class="work-card" onclick="openModal('modal4')">
-							<h3>Data Engineer</h3>
-							<h5>Anakin, Bangalore, India</h5>
-							<h6>Mar 2021 - Jul 2022</h6>
-						</div> -->
-
-						<!-- Modal for 4
-						<div id="modal4" class="modal">
-							<div class="modal-content">
-								<span class="close" onclick="closeModal('modal4')">&times;</span>
-								<h3>Data Engineer - Anakin, Bangalore, India</h3>
-								<p>
-									• Developed automated Segment P&L reports in SAC, reducing manual effort by 70%<br>
-									• Integrated ELT pipelines from SAP, Azure & Snowflake<br>
-									• Improved forecast accuracy by 15% via SAC Time Series Forecasting<br>
-									• Reduced data loading times by 20%
-								</p>
-							</div>
-						</div> -->
-                        
-						<!-- Box 5 -->
-						<!-- <div class="work-card" onclick="openModal('modal5')">
-							<h3>Junior Web Developer</h3>
-							<h5>HealthyGx, Hyderabad, India</h5> 
-							<h6>Apr 2019 - May 2019</h6>
-						</div> -->
-
-						<!-- Modal for 5 -->
-						<!-- <div id="modal5" class="modal">
-							<div class="modal-content">
-								<span class="close" onclick="closeModal('modal5')">&times;</span>
-								<h3>Junior Web Developer - HealthyGx, Hyderabad, India</h3>
-								<p>
-									• Developed automated Segment P&L reports in SAC, reducing manual effort by 70%<br>
-									• Integrated ELT pipelines from SAP, Azure & Snowflake<br>
-									• Improved forecast accuracy by 15% via SAC Time Series Forecasting<br>
-									• Reduced data loading times by 20%
-								</p>
-							</div>
-						</div> -->
-
-
-
-
-						
-			</section>
-			
-
-
-
-
-		
-
-
-                      
-
-		<!-- Projects -->
-
-
-
-
-
-
-		
-		<section id="four" class="main style2 special">
-			<canvas class="section-canvas" data-network></canvas>
-			<div class="container">
-				<header class="major">
-					<h2>Projects</h2>		
+			<!-- Experience -->
+			<div class="panel" role="tabpanel" id="panel-experience" aria-labelledby="tab-experience" hidden>
+				<header class="sec-head">
+					<p class="kicker">02 · Experience</p>
+					<h2>Where I've shipped pipelines</h2>
 				</header>
-				<ul class="features">
-					<!-- Box 10: StockSense -->
-					<div class="work-card" onclick="openModal('modal10')">
-						<h3>AI-Driven Stock Trading &amp; Research Platform (StockSense)</h3>
-
-					</div>
-
-					<!-- Modal for 10 -->
-					<div id="modal10" class="modal">
-						<div class="modal-content">
-							<span class="close" onclick="closeModal('modal10')">&times;</span>
-
-							<p>An AI-powered stock research and paper-trading platform built with Claude Haiku/Sonnet and multi-agent workflows. Bull and Bear debate agents argue both sides of each trade, and automated risk and stop-loss checks gate execution — analyzing 100+ stocks daily, cutting evaluation time by 90% and manual monitoring by ~80%.<br />
-								Next.js + AWS (Cognito, RDS) frontend with real portfolio tracking, watchlists, alerts, and stock analysis. Specialized agents (data, news, bull, bear, judge, risk, execution, monitor) are orchestrated on a schedule with per-agent cost tracking against an LLM API.</p>
-							<ul class="actions special">
-								<li><a href="https://stocksense-rangarohit.vercel.app" class="button" target="_blank">Website</a></li>
-									<li><a href="https://github.com/rangarohitnallamolu/stocksense" class="button" target="_blank">More</a></li>
+				<ol class="timeline">
+					<li class="tl-item is-current">
+						<span class="tl-dot" aria-hidden="true"></span>
+						<article class="tl-card">
+							<div class="tl-top">
+								<div>
+									<h3>Data Engineer</h3>
+									<p class="org">BigBlue InfoTech · Client: <b>McKesson</b> · Dallas, TX</p>
+								</div>
+								<time>Jan 2025 – Present</time>
+							</div>
+							<ul class="metrics">
+								<li><b>20%</b> faster month-end close prep</li>
+								<li><b>15%</b> lower runtime &amp; compute cost</li>
+								<li><b>40+ hrs</b> saved / month</li>
 							</ul>
+							<ul class="bullets">
+								<li>Engineered PySpark ELT pipelines on Databricks for finance, headcount, and operational data.</li>
+								<li>Developed Kafka and Spark Structured Streaming pipelines ingesting real-time operational events into Delta Lake with checkpointing.</li>
+								<li>Automated data validation and source-to-target reconciliation for nulls, duplicates, schema drift, and freshness, saving 16+ hrs/month.</li>
+								<li>Optimized P&amp;L, OPEX, and headcount Spark jobs with partitioning and caching.</li>
+								<li>Modeled actuals, budget, forecast, and headcount data marts in Delta Lake using MERGE and CDC loads for variance reporting.</li>
+								<li>Applied the Claude API on Databricks to tag sentiment and recurring issues in product feedback, loading results into review data marts.</li>
+								<li>Orchestrated Airflow and Databricks Workflows with retries and alerting, using GitHub Actions CI/CD and dbt tests for reliable deploys.</li>
+								<li>Delivered Power BI dashboards for P&amp;L, OPEX, and headcount to finance leadership, replacing Excel reports and saving 25+ hrs/month.</li>
+							</ul>
+							<p class="chips"><span>Databricks</span><span>PySpark</span><span>Kafka</span><span>Delta Lake</span><span>Airflow</span><span>dbt</span><span>Claude API</span><span>Power BI</span></p>
+						</article>
+					</li>
+					<li class="tl-item">
+						<span class="tl-dot" aria-hidden="true"></span>
+						<article class="tl-card">
+							<div class="tl-top">
+								<div>
+									<h3>Graduate Data Engineer</h3>
+									<p class="org">University of Massachusetts Lowell, MA</p>
+								</div>
+								<time>Dec 2022 – May 2024</time>
+							</div>
+							<ul class="metrics">
+								<li><b>25%</b> faster reporting</li>
+								<li><b>10%</b> shorter pipeline runtime</li>
+							</ul>
+							<ul class="bullets">
+								<li>Ingested student, enrollment, course, and finance data from legacy systems with Azure Data Factory and PySpark on Databricks.</li>
+								<li>Structured the data into raw, cleaned, and business-ready Medallion layers on Azure Data Lake.</li>
+								<li>Designed star-schema models with SCD Type 2 dimensions, preserving enrollment history for retention and revenue analysis.</li>
+								<li>Tuned Spark pipelines using predicate pushdown, Z-ordering, and file compaction.</li>
+								<li>Introduced automated checks for completeness, accuracy, freshness, and duplicates, preventing inconsistent data in reports.</li>
+								<li>Secured sensitive student data with Databricks Unity Catalog and RBAC, centralizing permissions so each team saw only approved data.</li>
+								<li>Created Power BI dashboards for enrollment, course performance, and tuition revenue for department leaders.</li>
+							</ul>
+							<p class="chips"><span>Azure Data Factory</span><span>PySpark</span><span>Star schema · SCD2</span><span>Unity Catalog</span><span>Power BI</span></p>
+						</article>
+					</li>
+					<li class="tl-item">
+						<span class="tl-dot" aria-hidden="true"></span>
+						<article class="tl-card">
+							<div class="tl-top">
+								<div>
+									<h3>Graduate Research Assistant</h3>
+									<p class="org">University of Massachusetts Lowell, MA</p>
+								</div>
+								<time>Jun 2023 – Nov 2023</time>
+							</div>
+							<ul class="metrics">
+								<li><b>12 yrs</b> of genomics data</li>
+								<li><b>85%</b> test accuracy</li>
+							</ul>
+							<ul class="bullets">
+								<li>Consolidated 12 years of metagenomics data from Azure Data Lake into an ML-ready dataset using PySpark on Azure Databricks.</li>
+								<li>Built XGBoost, Random Forest, and PyTorch neural network models in Python to predict Type 2 diabetes risk.</li>
+								<li>Identified a strong positive correlation (r = 0.70) between <i>Coprococcus</i> bacteria abundance and Type 2 diabetes risk.</li>
+							</ul>
+							<p class="chips"><span>Azure Databricks</span><span>PySpark</span><span>XGBoost</span><span>PyTorch</span></p>
+						</article>
+					</li>
+				</ol>
+			</div>
+
+			<!-- Projects -->
+			<div class="panel" role="tabpanel" id="panel-projects" aria-labelledby="tab-projects" hidden>
+				<header class="sec-head">
+					<p class="kicker">03 · Projects</p>
+					<h2>Things I've built</h2>
+				</header>
+				<article class="feature">
+					<div class="feature-copy">
+						<p class="feature-tag"><i class="fas fa-star"></i> Featured · Data Engineering + AI</p>
+						<h3>AI-Powered Food Delivery Analytics Pipeline</h3>
+						<p>A daily Airflow pipeline loads <b>10M orders</b> from S3 into Snowflake, with dbt medallion layers and MERGE facts. A Claude step in the DAG classifies <b>300K reviews</b> by sentiment, topic, and key issue, feeding a dbt insights mart, and Streamlit apps add RAG chat and text-to-SQL over customer feedback and business metrics.</p>
+						<p class="chips"><span>Airflow</span><span>S3</span><span>Snowflake</span><span>dbt</span><span>Claude</span><span>Streamlit</span></p>
+						<div class="feature-links">
+							<a class="btn btn-small btn-ghost" href="https://github.com/rangarohitnallamolu/food-delivery-analytics-pipeline" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
 						</div>
 					</div>
-
-					<!-- Box 11 -->
-					<div class="work-card" onclick="openModal('modal11')">
-						<h3>Multi Label Ocular Disease Classification</h3>
-
+					<div class="agent-flow" aria-label="Pipeline: S3 orders into an Airflow DAG, loaded into Snowflake with dbt layers, reviews classified by Claude, served to Streamlit RAG and text-to-SQL apps">
+						<span class="af-node"><i class="fas fa-database"></i> S3 · 10M orders</span>
+						<span class="af-link" aria-hidden="true"></span>
+						<span class="af-node"><i class="fas fa-project-diagram"></i> Airflow DAG</span>
+						<span class="af-link" aria-hidden="true"></span>
+						<span class="af-node"><i class="fas fa-layer-group"></i> Snowflake + dbt</span>
+						<span class="af-link" aria-hidden="true"></span>
+						<span class="af-node"><i class="fas fa-tags"></i> Claude review tagging</span>
+						<span class="af-link" aria-hidden="true"></span>
+						<span class="af-node trade"><i class="fas fa-comments"></i> RAG chat · text-to-SQL</span>
 					</div>
-
-					<!-- Modal for 11 -->
-					<div id="modal11" class="modal">
-						<div class="modal-content">
-							<span class="close" onclick="closeModal('modal11')">&times;</span>
-							
-							<p> Employed deep learning techniques to classify multi-label ocular diseases using an 8000-sample dataset collected from Chinese
-								medical institutions. Achieved a 60% accuracy rate and a 0.76 AUC score utilizing InceptionNet.<br />
-								Balanced dataset frequencies and assessed VGGNet, ResNet, DenseNet, and InceptionNet performance using key metrics like Accuracy, AUC, Precision,
-								 Recall, and F1-Score. <br />
-								 InceptionNet emerged as the top performer, achieving 60% accuracy and 0.76 AUC, demonstrating superior capability in distinguishing between ocular 
-								 disease classes with consistently higher precision, recall, and F1-Score scores.</p>
-							   <ul class="actions special">
-								   <li><a href="https://github.com/nishatcherian/Group5_MultiLabel_OcularDiseaseClassificiation" class="button" target="_blank">More</a></li>
-							   </ul>
+				</article>
+				<article class="feature">
+					<div class="feature-copy">
+						<p class="feature-tag"><i class="fas fa-star"></i> Featured · Agentic AI</p>
+						<h3>StockSense: AI Stock Trading &amp; Research</h3>
+						<p>A multi-agent platform for data-backed stock research, where Claude Haiku and Sonnet Bull/Bear agents debate each trade idea. Automated daily research and risk/stop-loss checks on 100+ stocks cut evaluation time by <b>90%</b> and manual monitoring by about <b>80%</b>.</p>
+						<p class="chips"><span>Claude Haiku · Sonnet</span><span>Next.js</span><span>Node.js</span><span>PostgreSQL</span><span>AWS RDS · Cognito</span><span>Finnhub · FMP</span></p>
+						<div class="feature-links">
+							<a class="btn btn-small" href="https://stocksense-rangarohit.vercel.app" target="_blank" rel="noopener">Live demo <i class="fas fa-external-link-alt"></i></a>
+							<a class="btn btn-small btn-ghost" href="https://github.com/rangarohitnallamolu/stocksense" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
 						</div>
 					</div>
-
-					<!-- Box 12 -->
-					<div class="work-card" onclick="openModal('modal12')">
-						<h3>Image Caption Generator with Accessibility Features</h3>
-						
-					</div>
-
-					<!-- Modal for 12 -->
-					<div id="modal12" class="modal">
-						<div class="modal-content">
-							<span class="close" onclick="closeModal('modal12')">&times;</span>
-							
-							<p> Leveraged cutting-edge computer vision and natural language processing techniques to develop an image caption generator, 
-								bridging the gap between the visual world and individuals with visual impairments.<br />
-								Implemented deep learning methodologies, utilizing Convolutional Neural Networks (CNN) for image feature extraction, 
-								Recurrent Neural Networks (RNN) with Long Short Term Memory (LSTM) architectures, and the Flickr 8k dataset with 8000 images
-								 for generating coherent textual descriptions.<br />
-								This comprehensive approach was employed to train the advanced model, which achieved a remarkable BLEU score of 0.35, 
-								demonstrating its capability to describe visual content and enhance accessibility through speech conversion.</p>
-								<ul class="actions special">
-									<li><a href="https://github.com/rangarohitnallamolu/Image-Caption-Generator-with-Accessibility-Features" class="button" target="_blank">More</a></li>
-								</ul>
+					<div class="agent-flow" aria-label="StockSense agent flow: Bull and Bear agents debate, a Judge decides, a Risk gate checks, then a paper trade executes">
+						<div class="af-col">
+							<span class="af-node bull"><i class="fas fa-arrow-up"></i> Bull agent</span>
+							<span class="af-node bear"><i class="fas fa-arrow-down"></i> Bear agent</span>
 						</div>
+						<span class="af-link" aria-hidden="true"></span>
+						<span class="af-node judge"><i class="fas fa-balance-scale"></i> Judge</span>
+						<span class="af-link" aria-hidden="true"></span>
+						<span class="af-node risk"><i class="fas fa-shield-alt"></i> Risk &amp; stop-loss</span>
+						<span class="af-link" aria-hidden="true"></span>
+						<span class="af-node trade"><i class="fas fa-check"></i> Paper trade</span>
 					</div>
-					<!-- Box 13 -->
-					<div class="work-card" onclick="openModal('modal13')">
-						<h3>Adversarial attack on Text classification</h3>
-						
-					</div>
+				</article>
+				<h3 class="sub">More projects</h3>
+				<div class="project-grid">
+					<a class="project" href="https://github.com/nishatcherian/Group5_MultiLabel_OcularDiseaseClassificiation" target="_blank" rel="noopener">
+						<span class="icon"><i class="fas fa-eye"></i></span>
+						<h3>Ocular disease classification</h3>
+						<p>Multi-label CNN benchmark on 8k retinal images; InceptionNet led the field.</p>
+						<span class="project-foot"><b>0.76</b> AUC <i class="fas fa-arrow-right"></i></span>
+					</a>
+					<a class="project" href="https://github.com/rangarohitnallamolu/Image-Caption-Generator-with-Accessibility-Features" target="_blank" rel="noopener">
+						<span class="icon"><i class="fas fa-closed-captioning"></i></span>
+						<h3>Accessible image captioning</h3>
+						<p>CNN + LSTM captions read aloud with text-to-speech, trained on Flickr 8k.</p>
+						<span class="project-foot"><b>0.35</b> BLEU <i class="fas fa-arrow-right"></i></span>
+					</a>
+					<a class="project" href="https://github.com/rangarohitnallamolu/Adversarial-attack-on-Images-numbers-Classification-model" target="_blank" rel="noopener">
+						<span class="icon"><i class="fas fa-user-secret"></i></span>
+						<h3>Adversarial attacks</h3>
+						<p>Data poisoning on MNIST and spam/ham classifiers, then hardened with adversarial training.</p>
+						<span class="project-foot"><b>+20%</b> robustness <i class="fas fa-arrow-right"></i></span>
+					</a>
+					<a class="project" href="https://github.com/rangarohitnallamolu/Bank-Churn-Prediction" target="_blank" rel="noopener">
+						<span class="icon"><i class="fas fa-university"></i></span>
+						<h3>Bank churn prediction</h3>
+						<p>XGBoost and Random Forest models flagging customers likely to leave.</p>
+						<span class="project-foot"><b>0.99</b> ROC-AUC <i class="fas fa-arrow-right"></i></span>
+					</a>
+				</div>
+			</div>
 
-					<!-- Modal for 13 -->
-					<div id="modal13" class="modal">
-						<div class="modal-content">
-							<span class="close" onclick="closeModal('modal13')">&times;</span>
-							
-							<p> Employed advanced data poisoning techniques, specifically Semantic Poisoning and Keyword Poisoning, on both the MNIST dataset
-								and spam and ham datasets to assess the vulnerability of text classification models to adversarial attacks.<br />
-							   This strategic approach demonstrated a significant and noteworthy impact on models trained with both the spam and ham dataset 
-							   and the MNIST dataset, especially when employing a minimal epsilon value of 0.3.<br />
-								Developed a robust defense mechanism through adversarial training, achieving a remarkable 20% enhancement in the MNIST dataset
-							   -trained model and an 8% improvement in the defense efficacy of the spam and ham dataset-trained model.</p>
-							   <ul class="actions special">
-								   <li><a href="https://github.com/rangarohitnallamolu/Adversarial-attack-on-Images-numbers-Classification-model" class="button" target="_blank">More</a></li>
-							   </ul>
-						</div>
-					</div>
-
-
-					<!-- Box 14 -->
-					<div class="work-card" onclick="openModal('modal14')">
-						<h3>Bank Customer Churn Prediction</h3>
-						
-					</div>
-
-					<!-- Modal for 14 -->
-					<div id="modal14" class="modal">
-						<div class="modal-content">
-							<span class="close" onclick="closeModal('modal14')">&times;</span>
-							
-							<p> Developed predictive models with KNeighbors, Random Forest, and XGBoost to identify potential bank customer churn using data patterns and features.<br />
-								Evaluated model performance using XGBoost and Random Forest, achieving near-perfect ROC-AUC scores of 0.9895 and 0.9879, demonstrating effective churn prediction across classes.</p>
-							<ul class="actions special">
-								<li><a href="https://github.com/rangarohitnallamolu/Bank-Churn-Prediction" class="button" target="_blank">More</a></li>
-							</ul>
-						</div>
-					</div>
-					
-
-					<!-- Box 15 -->
-					<div class="work-card" onclick="openModal('modal15')">
-						<h3>E-Commerce website</h3>
-						
-					</div>
-
-					<!-- Modal for 15 -->
-					<div id="modal15" class="modal">
-						<div class="modal-content">
-							<span class="close" onclick="closeModal('modal15')">&times;</span>
-							
-							<p>Designed and implemented an e-commerce platform focused on camera and accessory sales, utilizing JavaScript, HTML, and CSS.<br />
-								During implementation, incorporated the Apriori algorithm in the development phase to enhance product recommendations for camera
-								 enthusiasts, resulting in a notable 13% boost in sales.</p>
-								 <ul class="actions special">
-									<li><a href="#" class="button">More</a></li>
-								</ul>
-						</div>
-					</div>
-						<!-- <h3>Multi Label Ocular Disease Classification</h3>
-						<p> Employed deep learning techniques to classify multi-label ocular diseases using an 8000-sample dataset collected from Chinese
-							 medical institutions. Achieved a 60% accuracy rate and a 0.76 AUC score utilizing InceptionNet.<br />
-							 Balanced dataset frequencies and assessed VGGNet, ResNet, DenseNet, and InceptionNet performance using key metrics like Accuracy, AUC, Precision,
-							  Recall, and F1-Score. <br />
-							  InceptionNet emerged as the top performer, achieving 60% accuracy and 0.76 AUC, demonstrating superior capability in distinguishing between ocular 
-							  disease classes with consistently higher precision, recall, and F1-Score scores.</p>
-							<ul class="actions special">
-								<li><a href="https://github.com/nishatcherian/Group5_MultiLabel_OcularDiseaseClassificiation" class="button" target="_blank">More</a></li>
-							</ul>
-					 -->
-					
-						<!-- <h3>Image Caption Generator with Accessibility Features</h3>
-						<p> Leveraged cutting-edge computer vision and natural language processing techniques to develop an image caption generator, 
-							bridging the gap between the visual world and individuals with visual impairments.<br />
-							Implemented deep learning methodologies, utilizing Convolutional Neural Networks (CNN) for image feature extraction, 
-							Recurrent Neural Networks (RNN) with Long Short Term Memory (LSTM) architectures, and the Flickr 8k dataset with 8000 images
-							 for generating coherent textual descriptions.<br />
-							This comprehensive approach was employed to train the advanced model, which achieved a remarkable BLEU score of 0.35, 
-							demonstrating its capability to describe visual content and enhance accessibility through speech conversion.</p>
-							<ul class="actions special">
-								<li><a href="https://github.com/rangarohitnallamolu/Image-Caption-Generator-with-Accessibility-Features" class="button" target="_blank">More</a></li>
-							</ul>
-					
-					
-						<h3>Adversarial attack on Text classification</h3>
-						<p> Employed advanced data poisoning techniques, specifically Semantic Poisoning and Keyword Poisoning, on both the MNIST dataset
-							 and spam and ham datasets to assess the vulnerability of text classification models to adversarial attacks.<br />
-							This strategic approach demonstrated a significant and noteworthy impact on models trained with both the spam and ham dataset 
-							and the MNIST dataset, especially when employing a minimal epsilon value of 0.3.<br />
-							 Developed a robust defense mechanism through adversarial training, achieving a remarkable 20% enhancement in the MNIST dataset
-							-trained model and an 8% improvement in the defense efficacy of the spam and ham dataset-trained model.</p>
-							<ul class="actions special">
-								<li><a href="https://github.com/rangarohitnallamolu/Adversarial-attack-on-Images-numbers-Classification-model" class="button" target="_blank">More</a></li>
-							</ul>
-					
-					
-						<h3>E-Commerce website</h3>
-						<p>Designed and implemented an e-commerce platform focused on camera and accessory sales, utilizing JavaScript, HTML, and CSS.<br />
-							During implementation, incorporated the Apriori algorithm in the development phase to enhance product recommendations for camera
-							 enthusiasts, resulting in a notable 13% boost in sales.</p>
-							 <ul class="actions special">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-					
-					
-					
-						<h3>Bank Customer Churn Prediction</h3>
-						<p> Developed predictive models with KNeighbors, Random Forest, and XGBoost to identify potential bank customer churn using data patterns and features.<br />
-						    Evaluated model performance using XGBoost and Random Forest, achieving near-perfect ROC-AUC scores of 0.9895 and 0.9879, demonstrating effective churn prediction across classes.</p>
-						<ul class="actions special">
-							<li><a href="https://github.com/rangarohitnallamolu/Bank-Churn-Prediction" class="button" target="_blank">More</a></li>
-						</ul> -->
-					
+			<!-- Skills -->
+			<div class="panel" role="tabpanel" id="panel-skills" aria-labelledby="tab-skills" hidden>
+				<header class="sec-head">
+					<p class="kicker">04 · Skills</p>
+					<h2>My toolkit</h2>
+				</header>
+				<div class="skill-grid">
+					<section class="skill-card">
+						<h3><span class="icon"><i class="fas fa-stream"></i></span> Data engineering</h3>
+						<p class="chips"><span>Apache Spark</span><span>Spark Structured Streaming</span><span>Kafka</span><span>Airflow</span><span>dbt</span><span>Delta Lake</span><span>CDC</span><span>Dimensional modeling</span></p>
+					</section>
+					<section class="skill-card">
+						<h3><span class="icon"><i class="fas fa-cloud"></i></span> Cloud &amp; platforms</h3>
+						<p class="chips"><span>Databricks</span><span>Azure</span><span>AWS</span><span>Snowflake</span></p>
+					</section>
+					<section class="skill-card">
+						<h3><span class="icon"><i class="fas fa-code"></i></span> Programming languages</h3>
+						<p class="chips"><span>Python</span><span>PySpark</span><span>SQL</span><span>Scala</span></p>
+					</section>
+					<section class="skill-card">
+						<h3><span class="icon"><i class="fas fa-brain"></i></span> AI / ML</h3>
+						<p class="chips"><span>Claude</span><span>RAG</span><span>PyTorch</span><span>XGBoost</span><span>Streamlit</span></p>
+					</section>
+					<section class="skill-card">
+						<h3><span class="icon"><i class="fas fa-chart-bar"></i></span> BI &amp; databases</h3>
+						<p class="chips"><span>Power BI</span><span>SAP Analytics Cloud</span><span>PostgreSQL</span></p>
+					</section>
+					<section class="skill-card">
+						<h3><span class="icon"><i class="fas fa-cogs"></i></span> DevOps</h3>
+						<p class="chips"><span>Git</span><span>GitHub Actions</span><span>Docker</span><span>CI/CD</span></p>
+					</section>
+				</div>
+				<h3 class="sub">Certifications</h3>
+				<ul class="certs">
+					<li><i class="fas fa-certificate"></i><div><b>Tableau</b><span>Tableau for Data Scientists · Interactive Dashboards · Mastering Calculations (LinkedIn)</span></div></li>
+					<li><i class="fas fa-certificate"></i><div><b>Information Security</b><span>Context and Introduction (University of London)</span></div></li>
+					<li><i class="fas fa-certificate"></i><div><b>Artificial Intelligence A-Z</b><span>Udemy</span></div></li>
 				</ul>
 			</div>
-		</section>
-		<!-- Skills and Certifications -->
-<section id="five" class="main style2 special">
-<canvas class="section-canvas" data-network></canvas>
-    <div class="container">
-        <header class="major">
-            <h2>Skills & Certifications</h2>
-        </header>
-        
-        <div class="row gtr-150">
-            
-            <!-- Skills -->
-            <div class="col-6 col-12-medium">
-                <header class="major">
-                    <h3>Skills</h3>
-                </header>
-                <p> <b>Programming Languages: </b> Python, Scala, Java, R <br />
-					<b>Cloud & Platforms: </b> AWS, Azure, GCP, Databricks, Snowflake, SAP Datasphere, SAP Analytics Cloud (SAC) <br />
-					<b>Data Engineering: </b> ETL/ELT, Apache Spark, Medallion Architecture, Data Governance, DBT, Airflow, Kafka <br />
-					<b>AI/ML: </b> Claude API, LangChain, LangGraph, LLM Multi-Agent Systems, RAG (Retrieval-Augmented Generation), Machine Learning <br />
-					<b>BI & Databases: </b> Power BI, Tableau, Matplotlib, PostgreSQL, MySQL, DynamoDB, Cassandra <br />
-					<b>DevOps: </b> Kubernetes, Ansible, Jenkins, Docker <br /> </p>
-            </div>
-			
-            
-            <!-- Certifications -->
-            <div class="col-6 col-12-medium">
-                <header class="major">
-                    <h3>Certifications</h3>
-                </header>
-                <p>Tableau for Data Scientists by LinkedIn <br /> Creating Interactive Tableau Dashboards by LinkedIn <br /> Tableau Mastering Calculations by LinkedIn <br />
-                    Information Security: Context and Introduction by University of London <br /> Artificial Intelligence A-Z: Learn how to build an AI by Udemy</p>
 
-                <!-- Education -->
-                <header class="major">
-                    <h3>Education</h3>
-                </header>
-                <p><b>University of Massachusetts Lowell, MA</b><br />
-                    Master of Science in Computer Science, Sep 2022 - May 2024<br /><br />
-                    <b>Christ University, Bangalore, India</b><br />
-                    Bachelor of Technology in Computer Science, Aug 2017 - May 2021</p>
-            </div>
-            
-        </div>
-    </div>
-</section>
-
-<!-- Achievements -->
-
-
-
-
-<section id="six" class="main style2 special">
-<canvas class="section-canvas" data-network></canvas>
-    <div class="container">
-        <header class="major">
-            <h2>Achievements</h2>
-        </header>
-        
-        <div class="row gtr-150">
-            
-            <div class="container">
-				<header class="major">
-					<h3>Cricket</h3>
+			<!-- Education -->
+			<div class="panel" role="tabpanel" id="panel-education" aria-labelledby="tab-education" hidden>
+				<header class="sec-head">
+					<p class="kicker">05 · Education</p>
+					<h2>Where I learned</h2>
 				</header>
-				<div class="achievement-horizontal">
-					<div class="achievement-item" onclick="openModal('modal21')">
-					  <img src="images/HSL.jpg" alt="Hoyasola Super League">
-					  <div class="caption">Hoyasola Super League 2024 Champions</div>
-					</div>
-					<div class="achievement-item" onclick="openModal('modal22')">
-					  <img src="images/ISA2.jpg" alt="ISA Season 2">
-					  <div class="caption">ISA Premier League Season 2, 2024 – UMass Lowell</div>
-					</div>
-					<div class="achievement-item" onclick="openModal('modal23')">
-					  <img src="images/scg.jpg" alt="SCG Premier League">
-					  <div class="caption">SCG Premier League 2022 – Hyderabad</div>
-					</div>
-					<div class="achievement-item" onclick="openModal('modal24')">
-					  <img src="images/MOM1.JPG" alt="Massachusetts State Premier League">
-					  <div class="caption">Massachusetts State Premier League 2024</div>
-					</div>
-				  </div>
-				  
-				  <!-- Modals -->
-				  <div id="modal21" class="modal">
-					<div class="modal-content">
-					  <span class="close" onclick="closeModal('modal21')">&times;</span>
-					  <img src="images/HSL.jpg" alt="Full HSL Image" class="modal-image">
-					  <p>Hoyasola Super League 2024 Champions</p>
-					</div>
-				  </div>
-				  
-				  <div id="modal22" class="modal">
-					<div class="modal-content">
-					  <span class="close" onclick="closeModal('modal22')">&times;</span>
-					  <img src="images/ISA2.jpg" alt="Full ISA2 Image" class="modal-image">
-					  <p>Indian Student Association Premier League Season 2, 2024 – UMass Lowell</p>
-					</div>
-				  </div>
-				  
-				  <div id="modal23" class="modal">
-					<div class="modal-content">
-					  <span class="close" onclick="closeModal('modal23')">&times;</span>
-					  <img src="images/scg.jpg" alt="Full SCG Image" class="modal-image">
-					  <p>SCG Premier League 2022 – Hyderabad</p>
-					</div>
-				  </div>
-
-				  <div id="modal24" class="modal">
-					<div class="modal-content">
-					  <span class="close" onclick="closeModal('modal24')">&times;</span>
-					  <img src="images/MOM1.JPG" alt="Full Massachusetts State Premier League Image" class="modal-image">
-					  <p>Massachusetts State Premier League 2024</p>
-					</div>
-				  </div>
-
-
-
-				<!-- <div class="achievement-horizontal" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-					<div class="achievement-item" style="width: 48%; margin-bottom: 70px;">
-						<img src="images/HSL.jpg" alt="Hoyasola Super League" class="achievement-img" style="width: 100%;">
-						<p>Hoyasola Super League 2024 Champions </p>
-					</div>
-					<div class="achievement-item" style="width: 48%; margin-bottom: 70px;">
-						<img src="images/ISA2.jpg" alt="Indian Student Associantion- UMass Lowell season 2" class="achievement-img" style="width: 100%;">
-						<p>Indian Student Associantion  Premier League Season 2 2024- UMass Lowell </p>
-					</div>
-					<div class="achievement-item" style="width: 48%; margin-bottom: 70px;">
-						<img src="images/scg.jpg" alt="Indian Student Associantion- UMass Lowell season 1" class="achievement-img" style="width: 100%;">
-						<p>SCG Premier League 2022- Hyderabad </p> 
-					</div>
+				<div class="edu-grid">
+					<article class="edu-card">
+						<span class="icon"><i class="fas fa-graduation-cap"></i></span>
+						<time>Sep 2022 – May 2024</time>
+						<h3>M.S. Computer Science</h3>
+						<p>University of Massachusetts Lowell, MA</p>
+					</article>
+					<article class="edu-card">
+						<span class="icon"><i class="fas fa-graduation-cap"></i></span>
+						<time>Aug 2017 – May 2021</time>
+						<h3>B.Tech Computer Science</h3>
+						<p>Christ University, Bangalore, India</p>
+					</article>
 				</div>
-			</div> -->
-			
-			
-			            
-            <!-- Badminton -->
-            <div class="container">
-                <header class="major">
-                    <h3>Badminton</h3>
-                </header>
-				
-					<div class="achievement-horizontal">
-					<div class="achievement-item" onclick="openModal('modal31')">
-						<img src="images/statec.jpg" alt="Telangana State Champion">
-						<div class="caption">Telangana State Champion 2015</div>
-					</div>
-					<div class="achievement-item" onclick="openModal('modal32')">
-						<img src="images/TOI2015.jpg" alt="Times Of India Champion">
-						<div class="caption">Times of India Champion 2015</div>
-					</div>
-					<div class="achievement-item" onclick="openModal('modal33')">
-						<img src="images/IMS1.jpg" alt="UML Badminton 2022">
-						<div class="caption">UML Badminton Champions 2022</div>
-					</div>
-					<div class="achievement-item" onclick="openModal('modal35')">
-						<img src="images/FriscoOpen1.JPG" alt="Frisco Open 2025 Bronze Medalist">
-						<div class="caption">Frisco Open 2025 Bronze medalist</div>
-					</div>
-					<div class="achievement-item" onclick="openModal('modal36')">
-						<img src="images/frisco open winner.jpeg" alt="Frisco Open Winner 2026">
-						<div class="caption">Frisco Open Winner 2026</div>
-					</div>
+			</div>
 
-					<!-- Modals -->
-					<div id="modal31" class="modal">
-					<div class="modal-content">
-						<span class="close" onclick="closeModal('modal31')">&times;</span>
-						<img src="images/statec.jpg" alt="Full Telangana State Champion" class="modal-image">
-						<p>Telangana State Champion 2015</p>
-					</div>
-					</div>
-				
-					<div id="modal32" class="modal">
-					<div class="modal-content">
-						<span class="close" onclick="closeModal('modal32')">&times;</span>
-						<img src="images/TOI2015.jpg" alt="Full TOI Champion" class="modal-image">
-						<p>Times of India Champion 2015</p>
-					</div>
-					</div>
-				
-					<div id="modal33" class="modal">
-					<div class="modal-content">
-						<span class="close" onclick="closeModal('modal33')">&times;</span>
-						<img src="images/IMS1.jpg" alt="Full UML 2022" class="modal-image">
-						<p>University of Massachusetts Lowell Badminton Champions 2022</p>
-					</div>
-					</div>
-
-					<div id="modal35" class="modal">
-						<div class="modal-content">
-							<span class="close" onclick="closeModal('modal35')">&times;</span>
-							<img src="images/FriscoOpen1.JPG" alt="Frisco Open 2025" class="modal-image">
-							<p>Frisco Open 2025 Bronze medalist</p>
-					</div>
-					</div>
-
-					<div id="modal36" class="modal">
-						<div class="modal-content">
-							<span class="close" onclick="closeModal('modal36')">&times;</span>
-							<img src="images/frisco open winner.jpeg" alt="Frisco Open Winner 2026" class="modal-image">
-							<p>Frisco Open Winner 2026</p>
-					</div>
-					</div>
-
-				
-					
-				
-
-				<!-- <div class="achievement-item" onclick="openModal('modal34')">
-					<img src="images/IMS2.jpg" alt="UML Badminton 2023">
-					<div class="caption">UML Badminton Champions 2023</div>
+			<!-- Achievements -->
+			<div class="panel" role="tabpanel" id="panel-achievements" aria-labelledby="tab-achievements" hidden>
+				<header class="sec-head">
+					<p class="kicker">06 · Achievements</p>
+					<h2>Off the keyboard</h2>
+				</header>
+				<h3 class="sub"><i class="fas fa-trophy"></i> Badminton</h3>
+				<!-- --pos keeps each photo's faces inside the crop. -->
+				<div class="gallery">
+					<button type="button" data-full="images/frisco open winner.jpeg" style="--pos: 50% 46%"><img src="images/frisco open winner.jpeg" alt="Frisco Open 2026 winners with trophy cheque" loading="lazy" /><span><em>Gold</em>Frisco Open Winner 2026</span></button>
+					<button type="button" data-full="images/FriscoOpen1.JPG" style="--pos: 50% 14%"><img src="images/FriscoOpen1.JPG" alt="Frisco Open 2025 bronze medalists" loading="lazy" /><span><em>Bronze</em>Frisco Open 2025</span></button>
+					<button type="button" data-full="images/IMS1.jpg" style="--pos: 50% 40%"><img src="images/IMS1.jpg" alt="UMass Lowell intramural badminton champions" loading="lazy" /><span><em>Champions</em>UML 2022</span></button>
+					<button type="button" data-full="images/statec.jpg" style="--pos: 50% 20%"><img src="images/statec.jpg" alt="Receiving the Telangana State Champion award" loading="lazy" /><span><em>Champion</em>Telangana State 2015</span></button>
+					<button type="button" data-full="images/TOI2015.jpg" style="--pos: 50% 15%"><img src="images/TOI2015.jpg" alt="Receiving the Times of India Champion award" loading="lazy" /><span><em>Champion</em>Times of India 2015</span></button>
 				</div>
+				<h3 class="sub"><i class="fas fa-baseball-ball"></i> Cricket</h3>
+				<div class="gallery">
+					<button type="button" data-full="images/HSL.jpg" style="--pos: 50% 22%"><img src="images/HSL.jpg" alt="Holding the Hoyasola Super League trophy" loading="lazy" /><span><em>Champions</em>Hoyasola Super League 2024</span></button>
+					<button type="button" data-full="images/ISA2.jpg" style="--pos: 50% 34%"><img src="images/ISA2.jpg" alt="Holding the ISA Premier League trophy" loading="lazy" /><span><em>Season 2</em>ISA Premier League 2024</span></button>
+					<button type="button" data-full="images/MOM1.JPG" style="--pos: 50% 26%"><img src="images/MOM1.JPG" alt="Massachusetts State Premier League award" loading="lazy" /><span><em>2024</em>Massachusetts State PL</span></button>
+					<button type="button" data-full="images/scg.jpg" style="--pos: 50% 26%"><img src="images/scg.jpg" alt="SCG Premier League man of the match" loading="lazy" /><span><em>2022</em>SCG Premier League</span></button>
 				</div>
-			    
-				<div id="modal34" class="modal">
-					<div class="modal-content">
-						<span class="close" onclick="closeModal('modal34')">&times;</span>
-						<img src="images/IMS2.jpg" alt="Full UML 2023" class="modal-image">
-						<p>University of Massachusetts Lowell Badminton Champions 2023</p>
-					</div>
-					</div>
-				</div> -->
+			</div>
+		</section>
+	</main>
 
+	<!-- RAG chat: a side panel opened by the elephant -->
+	<aside class="assistant card" id="assistant" aria-labelledby="rag-title" aria-hidden="true" inert>
+		<div class="assistant-head">
+			<h2 id="rag-title"><i class="fas fa-database"></i> Ask about Rohit <span class="tag">RAG</span></h2>
+			<span class="mode" id="rag-mode"></span>
+			<button type="button" class="assistant-msg" id="msg-open" aria-label="Message Rohit"><i class="fas fa-comment-dots"></i> Message</button>
+			<button type="button" class="assistant-close" id="assistant-close" aria-label="Close chat"><i class="fas fa-times"></i></button>
+		</div>
 
-			    <!-- <div class="achievement-horizontal" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-				<div class="achievement-item">
-					<img src="images/statec.jpg" alt=" Telangana State Champions" class="achievement-img" style="width: 100%;">
-					<p>Telangana State Champion 2015</p>
-				</div>
-				<div class="achievement-item" style="width: 48%; margin-bottom: 70px;">
-					<img src="images/TOI2015.jpg" alt="Times Of India" class="achievement-img" style="width: 100%;">
-					<p>Times of India Champion 2015 </p>
-				</div>
-				<div class="achievement-item" style="width: 48%; margin-bottom: 70px;">
-					<img src="images/IMS1.jpg" alt="Times Of India" class="achievement-img" style="width: 100%;">
-					<p>University of Massachusetts Lowell Badminton Champions 2022 </p>
-				</div>
-				<div class="achievement-item" style="width: 48%; margin-bottom: 70px;">
-					<img src="images/IMS2.jpg" alt="Times Of India" class="achievement-img" style="width: 100%;">
-					<p>University of Massachusetts Lowell Badminton Champions 2023 </p>
-				</div>
-				
-			</div> -->
-				
-                
-            </div>
-            
-        </div>
-    </div>
-</section>
+		<ol class="stages" id="rag-stages" aria-label="RAG pipeline stages">
+			<li data-stage="ingest" data-state="active"><span class="stage-name">Ingest</span><span class="stage-detail">loading…</span></li>
+			<li data-stage="retrieve" data-state="idle"><span class="stage-name">Retrieve</span><span class="stage-detail"></span></li>
+			<li data-stage="rerank" data-state="idle"><span class="stage-name">Rerank</span><span class="stage-detail"></span></li>
+			<li data-stage="generate" data-state="idle"><span class="stage-name">Generate</span><span class="stage-detail"></span></li>
+		</ol>
 
+		<div class="log" id="rag-log" aria-live="polite">
+			<div class="msg msg-bot">
+				<p class="msg-text">Hi! I'm RAG bot 🐘 Ask me anything about Rohit's experience, projects, skills, or sports. Every answer is retrieved from Rohit's profile and cites its sources.</p>
+			</div>
+		</div>
 
+		<div class="suggest">
+			<button type="button" data-suggest>What does Rohit do at McKesson?</button>
+			<button type="button" data-suggest>Tell me about StockSense</button>
+			<button type="button" data-suggest>Experience with RAG and AI agents?</button>
+			<button type="button" data-suggest>Tell me about the food delivery pipeline</button>
+			<button type="button" data-suggest>How does Rohit optimize Spark?</button>
+			<button type="button" data-suggest>Badminton achievements?</button>
+		</div>
 
+		<form class="ask" id="rag-form">
+			<label class="sr-only" for="rag-input">Your question</label>
+			<textarea id="rag-input" rows="1" maxlength="300" placeholder="Ask about Rohit…"></textarea>
+			<button type="submit" class="btn" aria-label="Ask"><i class="fas fa-paper-plane"></i></button>
+		</form>
 
-		<!-- Footer -->
-		<footer id="footer">
-			<canvas class="section-canvas" data-network></canvas>
-			<ul class="icons">
-				
-				<li>
-					<a href="https://www.linkedin.com/in/ranga-rohit-nallamolu" class="icon brands alt fa-linkedin" target="_blank">
-						<span class="label"></span>
-					</a>
-				</li>
-				<li>
-					<a href="https://github.com/rangarohitnallamolu" class="icon brands alt fa-github" target="_blank">
-						<span class="label"></span>
-					</a>
-				</li>
-				<li>
-					<a href="mailto:n.rangarohit@gmail.com" class="icon solid fa-envelope" target="_blank">
-						<span class="label"></span>
-					</a>
-				</li>
-				<li>
-					<a href="tel:+19785697460" class="icon solid fa-phone-alt" target="_blank">
-						<span class="label"></span>
-					</a>
-				</li>
-				
-			
-		</footer>
+		<!-- Message Rohit: hands the text to the viewer's own email or SMS app; nothing is sent from this page -->
+		<form class="compose" id="compose" hidden>
+			<button type="button" class="compose-back" id="msg-back"><i class="fas fa-arrow-left"></i> Back to chat</button>
+			<p class="compose-intro">Leave Rohit a message. It opens in your email or texting app, ready to send.</p>
+			<label for="msg-name">Your name</label>
+			<input id="msg-name" type="text" maxlength="80" autocomplete="name" placeholder="Jane Doe" />
+			<label for="msg-from">Email or phone <span>(optional, so Rohit can reply)</span></label>
+			<input id="msg-from" type="text" maxlength="120" autocomplete="email" placeholder="jane@company.com" />
+			<label for="msg-text">Message</label>
+			<textarea id="msg-text" rows="4" maxlength="1000" required placeholder="Hi Rohit, I'd like to talk about a data engineering role…"></textarea>
+			<div class="compose-actions">
+				<button type="submit" class="btn" data-via="email"><i class="fas fa-envelope"></i> Send email</button>
+				<button type="submit" class="btn btn-ghost" data-via="sms"><i class="fas fa-sms"></i> Send text</button>
+			</div>
+			<p class="compose-note" id="msg-note" role="status"></p>
+		</form>
+	</aside>
 
+	<!-- Elephant greeter: opens the chat panel; its bubble questions go through the same RAG pipeline -->
+	<div class="mascot" id="mascot">
+		<div class="mascot-bubble" id="mascot-bubble" role="status">
+			<button type="button" class="bubble-close" id="bubble-close" aria-label="Dismiss">&times;</button>
+			<p><strong>Hi there! 👋 I'm RAG bot.</strong> Try asking me questions about Rohit.</p>
+			<div class="mascot-try">
+				<button type="button" data-suggest>What does Rohit do at McKesson?</button>
+				<button type="button" data-suggest>Tell me about StockSense</button>
+			</div>
+			<form class="bubble-ask" id="bubble-ask">
+				<label class="sr-only" for="bubble-input">Talk to RAG bot</label>
+				<input id="bubble-input" type="text" maxlength="300" placeholder="Talk to RAG bot…" autocomplete="off" />
+				<button type="submit" aria-label="Ask RAG bot"><i class="fas fa-paper-plane"></i></button>
+			</form>
+		</div>
+		<button type="button" class="mascot-btn" id="mascot-btn" aria-label="Chat with RAG bot about Rohit" aria-controls="assistant" aria-expanded="false">
+			<svg viewBox="0 0 84 72" aria-hidden="true">
+				<path class="el-tail" d="M73 40 q7 2 6 10" fill="none" stroke="#7e88bd" stroke-width="2.5" stroke-linecap="round" />
+				<rect x="38" y="50" width="8" height="16" rx="3.5" fill="#6f79ae" />
+				<rect x="60" y="50" width="8" height="16" rx="3.5" fill="#6f79ae" />
+				<ellipse cx="54" cy="44" rx="21" ry="16" fill="#8b95c9" />
+				<rect x="44" y="52" width="8" height="15" rx="3.5" fill="#8b95c9" />
+				<rect x="65" y="52" width="8" height="15" rx="3.5" fill="#8b95c9" />
+				<path class="el-trunk" d="M17 33 C 8 37, 5 49, 9 56 C 11 60, 16 59, 15 55 C 12 49, 14 44, 22 41 Z" fill="#8b95c9" />
+				<circle cx="28" cy="31" r="16" fill="#97a1d4" />
+				<path d="M19 41 q-2 4 -6 4" fill="none" stroke="#f5f0e6" stroke-width="2.5" stroke-linecap="round" />
+				<g class="el-ear">
+					<ellipse cx="41" cy="31" rx="11" ry="14" fill="#a9b2e3" />
+					<ellipse cx="42" cy="32" rx="6.5" ry="9" fill="#e9a8c9" opacity="0.75" />
+				</g>
+				<g class="el-eye">
+					<circle cx="24" cy="27" r="2.6" fill="#0b1220" />
+					<circle cx="24.9" cy="26.1" r="0.9" fill="#fff" />
+				</g>
+				<circle cx="28" cy="36" r="2.6" fill="#f28fb8" opacity="0.5" />
+			</svg>
+		</button>
+	</div>
 
-		
+	<dialog class="lightbox" id="lightbox">
+		<form method="dialog"><button class="close" aria-label="Close">&times;</button></form>
+		<img alt="" />
+		<p></p>
+	</dialog>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/animations.js"></script>
-
-			
-			<script>
-				function openModal(id) {
-					document.getElementById(id).style.display = "block";
-				}
-				
-				function closeModal(id) {
-					document.getElementById(id).style.display = "none";
-				}
-				
-				// Optional: Close modal if user clicks outside the modal content
-				window.onclick = function(event) {
-					const modals = document.querySelectorAll(".modal");
-					modals.forEach(modal => {
-						if (event.target == modal) {
-							modal.style.display = "none";
-						}
-					});
-				};
-				</script>
-				
-	</body>
+	<script src="assets/js/rag.js?v=3"></script>
+	<script src="assets/js/site.js?v=12"></script>
+</body>
 </html>

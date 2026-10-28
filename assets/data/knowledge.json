@@ -1,0 +1,215 @@
+{
+  "version": "2026-10-27b",
+  "chunks": [
+    {
+      "id": "summary",
+      "tab": "about",
+      "title": "Professional summary",
+      "keywords": "who about summary introduction background overview profile data engineer yourself",
+      "text": "Ranga Rohit Nallamolu is a Data Engineer with 3+ years of experience building scalable batch and streaming pipelines using Python, PySpark, SQL, Databricks, Kafka, and cloud platforms. Rohit is experienced in Delta Lake, CDC, dimensional modeling, workflow orchestration, CI/CD, and automated data quality. Rohit optimizes data processing, improves pipeline reliability, and delivers financial and operational data for analytics and AI-driven insights."
+    },
+    {
+      "id": "journey",
+      "tab": "about",
+      "title": "Why data",
+      "keywords": "why motivation journey story passion interest career path analytics",
+      "text": "Rohit has always been drawn to data, especially the challenge of turning messy, disconnected information into something a business can act on. That curiosity pulled Rohit from analytics into data engineering. More recently it led to building agentic AI systems that can reason over data on their own."
+    },
+    {
+      "id": "mckesson-pipelines",
+      "tab": "experience",
+      "title": "Data Engineer · BigBlue InfoTech (Client: McKesson)",
+      "keywords": "current job role work company employer mckesson mckesson bigblue responsibilities day dallas texas finance headcount pipelines elt databricks pyspark kafka streaming real-time 2025 present",
+      "text": "Since January 2025, Rohit has worked as a Data Engineer at BigBlue InfoTech for the client McKesson in Dallas, TX. Rohit engineered PySpark ELT pipelines on Databricks for finance, headcount, and operational data, cutting month-end close prep time by 20%. Rohit also developed Kafka and Spark Structured Streaming pipelines that ingest real-time operational events into Delta Lake with checkpointing."
+    },
+    {
+      "id": "mckesson-quality",
+      "tab": "experience",
+      "title": "Data quality & reconciliation at McKesson",
+      "keywords": "data quality checks validation reconciliation nulls duplicates schema drift freshness source target testing reliability mckesson",
+      "text": "At McKesson, Rohit automated data validation and source-to-target reconciliation for nulls, duplicates, schema drift, and freshness, saving 16+ hours per month."
+    },
+    {
+      "id": "mckesson-optimization",
+      "tab": "experience",
+      "title": "Spark performance tuning at McKesson",
+      "keywords": "spark optimization performance tuning partitioning caching cost reduction runtime compute databricks p&l opex headcount mckesson",
+      "text": "Rohit optimized P&L, OPEX, and headcount Spark jobs at McKesson with partitioning and caching, cutting job runtime and Databricks compute costs by 15%."
+    },
+    {
+      "id": "mckesson-modeling",
+      "tab": "experience",
+      "title": "Data marts & orchestration at McKesson",
+      "keywords": "data modeling marts actuals budget forecast headcount merge cdc variance airflow databricks workflows retries alerting github actions ci/cd dbt tests orchestration deploy",
+      "text": "At McKesson, Rohit modeled actuals, budget, forecast, and headcount data marts in Delta Lake using MERGE and CDC loads for variance reporting. Rohit orchestrated Airflow and Databricks Workflows with retries and alerting, using GitHub Actions CI/CD and dbt tests for reliable deploys."
+    },
+    {
+      "id": "mckesson-bi-ai",
+      "tab": "experience",
+      "title": "Power BI & Claude at McKesson",
+      "keywords": "power bi dashboards finance leadership excel reports p&l opex headcount claude api sentiment product feedback review marts genai llm mckesson",
+      "text": "Rohit delivered Power BI dashboards for P&L, OPEX, and headcount to McKesson finance leadership, replacing Excel reports and saving 25+ hours per month. Rohit also applied the Claude API on Databricks to tag sentiment and recurring issues in product feedback, loading the results into review data marts."
+    },
+    {
+      "id": "uml-de-pipelines",
+      "tab": "experience",
+      "title": "Graduate Data Engineer · UMass Lowell",
+      "keywords": "umass lowell university graduate data engineer student enrollment course finance azure data factory legacy medallion data lake reporting 2022 2024",
+      "text": "From December 2022 to May 2024, Rohit was a Graduate Data Engineer at the University of Massachusetts Lowell. Rohit ingested student, enrollment, course, and finance data from legacy systems with Azure Data Factory and PySpark on Databricks, then structured it into raw, cleaned, and business-ready Medallion layers on Azure Data Lake, cutting reporting time by 25%."
+    },
+    {
+      "id": "uml-de-governance",
+      "tab": "experience",
+      "title": "Modeling, tuning & governance at UMass Lowell",
+      "keywords": "star schema scd type 2 dimensions enrollment history retention predicate pushdown z-ordering compaction data quality completeness accuracy unity catalog rbac governance security permissions umass",
+      "text": "At UMass Lowell, Rohit designed star-schema models with SCD Type 2 dimensions to preserve enrollment history for retention and revenue analysis. Rohit tuned Spark pipelines with predicate pushdown, Z-ordering, and file compaction, reducing runtime by 10%, introduced automated checks for completeness, accuracy, freshness, and duplicates, and secured sensitive student data with Databricks Unity Catalog and RBAC."
+    },
+    {
+      "id": "uml-de-bi",
+      "tab": "experience",
+      "title": "Power BI at UMass Lowell",
+      "keywords": "power bi dashboards enrollment course performance tuition revenue department leaders reporting umass",
+      "text": "Rohit created Power BI dashboards at UMass Lowell for enrollment, course performance, and tuition revenue, presenting insights to department leaders."
+    },
+    {
+      "id": "uml-ra-pipelines",
+      "tab": "experience",
+      "title": "Graduate Research Assistant · UMass Lowell",
+      "keywords": "research assistant healthcare metagenomics microbiome azure data lake databricks pyspark 12 years ml-ready dataset 2023",
+      "text": "From June 2023 to November 2023, Rohit was a Graduate Research Assistant at UMass Lowell. Rohit consolidated 12 years of metagenomics data from Azure Data Lake into an ML-ready dataset using PySpark on Azure Databricks."
+    },
+    {
+      "id": "uml-ra-ml",
+      "tab": "experience",
+      "title": "Diabetes risk models",
+      "keywords": "machine learning random forest xgboost pytorch neural network type 2 diabetes prediction model accuracy coprococcus correlation healthcare",
+      "text": "In the research role, Rohit built XGBoost, Random Forest, and PyTorch neural network models in Python to predict Type 2 diabetes risk, achieving 85% test accuracy. The work identified a strong positive correlation (r = 0.70) between Coprococcus bacteria abundance and Type 2 diabetes risk."
+    },
+    {
+      "id": "food-delivery",
+      "tab": "projects",
+      "title": "AI-Powered Food Delivery Analytics Pipeline",
+      "keywords": "food delivery analytics pipeline project airflow s3 snowflake dbt medallion merge facts orders 10m daily batch side",
+      "text": "The AI-Powered Food Delivery Analytics Pipeline is a project where Rohit architected a daily Airflow pipeline that loads 10M orders from S3 into Snowflake, with dbt medallion layers and MERGE facts. The code is on GitHub at github.com/rangarohitnallamolu/food-delivery-analytics-pipeline."
+    },
+    {
+      "id": "food-delivery-ai",
+      "tab": "projects",
+      "title": "Food delivery reviews: Claude, RAG & text-to-SQL",
+      "keywords": "food delivery reviews claude classification sentiment topic key issue dbt insights mart rag chat text-to-sql streamlit natural language customer feedback business metrics",
+      "text": "In the food delivery project, Rohit automated Claude classification of 300K reviews by sentiment, topic, and key issue as a step in the Airflow DAG, feeding a dbt insights mart. Rohit also built RAG chat and text-to-SQL Streamlit applications for natural-language exploration of customer feedback and business metrics."
+    },
+    {
+      "id": "stocksense",
+      "tab": "projects",
+      "title": "StockSense · AI stock trading & research platform",
+      "keywords": "stocksense stock trading research platform ai agents multi-agent claude haiku sonnet bull bear debate risk stop-loss project side",
+      "text": "StockSense is an AI-driven stock trading and research platform Rohit built for data-backed stock research, where Claude Haiku and Sonnet Bull/Bear agents debate each trade idea. Automated daily research and risk/stop-loss checks on 100+ stocks cut evaluation time by 90% and manual monitoring by about 80%. It is live at stocksense-rangarohit.vercel.app."
+    },
+    {
+      "id": "stocksense-arch",
+      "tab": "projects",
+      "title": "StockSense architecture",
+      "keywords": "architecture stack nextjs next.js node.js nodejs postgresql aws cognito rds finnhub fmp market data apis",
+      "text": "StockSense is built with Next.js, Node.js, and PostgreSQL on AWS (RDS, Cognito), using live market data from the Finnhub and FMP APIs."
+    },
+    {
+      "id": "ai-experience",
+      "tab": "skills",
+      "title": "AI, LLM & RAG experience",
+      "keywords": "ai artificial intelligence llm genai generative rag retrieval augmented agentic agents claude api chatbot pytorch xgboost streamlit this assistant",
+      "text": "Rohit's AI/ML toolkit includes Claude, RAG, PyTorch, XGBoost, and Streamlit. Rohit has used the Claude API on Databricks to tag product feedback at McKesson, Claude classification inside an Airflow pipeline with RAG chat and text-to-SQL apps in the food delivery project, and Claude Bull/Bear agents in StockSense. The assistant on this page is itself a small RAG pipeline: Rohit's profile is chunked into a knowledge base, retrieved with BM25 and fuzzy matching, and turned into a grounded answer."
+    },
+    {
+      "id": "skills-core",
+      "tab": "skills",
+      "title": "Languages & cloud platforms",
+      "keywords": "skills programming languages python pyspark sql scala cloud aws azure databricks snowflake platforms tools",
+      "text": "Rohit programs in Python, PySpark, SQL, and Scala. Cloud and platform experience covers Databricks, Azure, AWS, and Snowflake."
+    },
+    {
+      "id": "skills-de",
+      "tab": "skills",
+      "title": "Data engineering skills",
+      "keywords": "data engineering etl elt spark structured streaming kafka airflow dbt delta lake cdc dimensional modeling orchestration real-time batch",
+      "text": "Rohit's data engineering skills include Apache Spark, Spark Structured Streaming, Kafka, Airflow, and dbt, along with Delta Lake, CDC, dimensional modeling, and workflow orchestration for both batch and streaming pipelines."
+    },
+    {
+      "id": "skills-bi-devops",
+      "tab": "skills",
+      "title": "BI, databases & DevOps",
+      "keywords": "bi visualization power bi sap analytics cloud sac databases postgresql devops git github actions docker ci/cd",
+      "text": "For BI and databases, Rohit works with Power BI, SAP Analytics Cloud, and PostgreSQL. DevOps tools include Git, GitHub Actions, Docker, and CI/CD."
+    },
+    {
+      "id": "certifications",
+      "tab": "skills",
+      "title": "Certifications",
+      "keywords": "certifications certificates courses linkedin udemy tableau information security",
+      "text": "Rohit's certifications are Tableau for Data Scientists (LinkedIn), Creating Interactive Tableau Dashboards (LinkedIn), Tableau Mastering Calculations (LinkedIn), Information Security: Context and Introduction (University of London), and Artificial Intelligence A-Z (Udemy)."
+    },
+    {
+      "id": "education",
+      "tab": "education",
+      "title": "Education",
+      "keywords": "education degree school university college study masters ms bachelors btech computer science umass lowell christ bangalore graduated",
+      "text": "Rohit earned a Master of Science in Computer Science from the University of Massachusetts Lowell (Sep 2022 – May 2024). Before that, Rohit earned a Bachelor of Technology in Computer Science from Christ University, Bangalore, India (Aug 2017 – May 2021)."
+    },
+    {
+      "id": "proj-ocular",
+      "tab": "projects",
+      "title": "Multi-label ocular disease classification",
+      "keywords": "deep learning computer vision ocular eye disease classification inceptionnet vgg resnet densenet auc medical images",
+      "text": "Rohit applied deep learning to classify multi-label ocular diseases on an 8,000-image dataset, comparing VGGNet, ResNet, DenseNet, and InceptionNet. InceptionNet performed best with 60% accuracy and 0.76 AUC."
+    },
+    {
+      "id": "proj-caption",
+      "tab": "projects",
+      "title": "Image caption generator with accessibility",
+      "keywords": "image captioning cnn rnn lstm flickr8k nlp accessibility visually impaired speech bleu",
+      "text": "Rohit built an image caption generator that uses a CNN for image features and an LSTM to generate captions, trained on Flickr 8k. It reached a BLEU score of 0.35 and converts captions to speech for people with visual impairments."
+    },
+    {
+      "id": "proj-adversarial",
+      "tab": "projects",
+      "title": "Adversarial attacks on classifiers",
+      "keywords": "adversarial attack data poisoning security robustness mnist spam ham adversarial training defense",
+      "text": "Rohit studied semantic and keyword data-poisoning attacks on MNIST and spam/ham classifiers, then built an adversarial-training defense that improved robustness by 20% on MNIST and 8% on the spam/ham model."
+    },
+    {
+      "id": "proj-churn",
+      "tab": "projects",
+      "title": "Bank customer churn prediction",
+      "keywords": "churn prediction bank customers classification xgboost random forest knn roc auc",
+      "text": "Rohit built bank customer churn models with KNN, Random Forest, and XGBoost; XGBoost and Random Forest reached ROC-AUC scores of 0.9895 and 0.9879."
+    },
+    {
+      "id": "badminton",
+      "tab": "achievements",
+      "title": "Badminton",
+      "keywords": "badminton sports hobby achievements tournaments champion medal frisco open nexus open telangana times of india",
+      "text": "Rohit competes in badminton. Highlights include Frisco Open Winner 2026, Frisco Open 2025 bronze, a podium at the Nexus Open 2025, UMass Lowell Badminton Champions 2022, Telangana State Champion 2015, and Times of India Champion 2015."
+    },
+    {
+      "id": "cricket",
+      "tab": "achievements",
+      "title": "Cricket",
+      "keywords": "cricket sports hobby league champions hoyasola hsl isa scg massachusetts premier league",
+      "text": "Rohit plays cricket for fun. Highlights include the Hoyasola Super League 2024 championship, the ISA Premier League Season 2 (2024) at UMass Lowell, the SCG Premier League 2022 in Hyderabad, and the Massachusetts State Premier League 2024."
+    },
+    {
+      "id": "sports-mindset",
+      "tab": "achievements",
+      "title": "Outside of work",
+      "keywords": "hobbies outside work free time personal interests discipline focus personality",
+      "text": "Outside of work, Rohit plays cricket and competes in badminton. Competitive sports taught Rohit the same discipline and focus that goes into solving hard data problems."
+    },
+    {
+      "id": "contact",
+      "tab": "about",
+      "title": "Contact",
+      "keywords": "contact email reach hire phone linkedin github resume cv connect message location based dallas",
+      "text": "You can reach Rohit at n.rangarohit@gmail.com or +1 978 569 7460, and connect on LinkedIn (linkedin.com/in/ranga-rohit-nallamolu) or GitHub (github.com/rangarohitnallamolu). Rohit's current role is based in Dallas, TX. The resume is available from the Resume button at the top of this page."
+    }
+  ]
+}
