@@ -44,6 +44,17 @@
 		bachelors: ['bachelor', 'btech', 'education'],
 		graduated: ['graduation', 'completed', 'education'],
 		finished: ['completed', 'education'],
+		finish: ['completed', 'education'],
+		qualify: ['completed', 'graduated', 'degree'],
+		qualified: ['completed', 'graduated', 'degree'],
+		pass: ['completed', 'graduated', 'degree'],
+		passed: ['completed', 'graduated', 'degree'],
+		earn: ['completed', 'degree'],
+		earned: ['completed', 'degree'],
+		obtain: ['completed', 'degree'],
+		pursue: ['education', 'degree'],
+		university: ['education', 'umass'],
+		graduation: ['graduated', 'education'],
 		years: ['experience'],
 		experience: ['years'],
 		hiring: ['available', 'open'],
@@ -142,7 +153,8 @@
 
 	function correct(index, term) {
 		if (index.vocab.has(term) || term.length < 4) return null;
-		var grams = trigrams(term), best = null, bestScore = 0.45;
+		// Short words need a closer match: "qualify" must not become "quality".
+		var grams = trigrams(term), best = null, bestScore = term.length >= 8 ? 0.4 : 0.5;
 		index.vocabGrams.forEach(function (v) {
 			var s = jaccard(grams, v.grams);
 			if (s > bestScore) { bestScore = s; best = v.term; }
@@ -160,8 +172,9 @@
 		raw.forEach(function (r) {
 			var t = stem(r);
 			var fixed = correct(index, t);
+			// A typo fix is a guess, so it counts for less than words the visitor actually typed.
 			if (fixed) { corrections.push([r, fixed]); t = fixed; }
-			add(t, 1);
+			add(t, fixed ? 0.6 : 1);
 			(SYNONYMS[r] || SYNONYMS[t] || []).forEach(function (s) { add(stem(s), 0.5); });
 		});
 
