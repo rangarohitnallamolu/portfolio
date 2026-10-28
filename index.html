@@ -9,7 +9,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-	<link rel="stylesheet" href="assets/css/site.css?v=19" />
+	<link rel="stylesheet" href="assets/css/site.css?v=22" />
 	<script>
 		// Set endpoint to the deployed rag-worker URL to answer with Claude.
 		// Left empty, answers are composed in the browser from retrieved chunks.
@@ -346,7 +346,7 @@
 		</section>
 	</main>
 
-	<!-- RAG chat: a side panel opened by the elephant -->
+	<!-- RAG chat: a side panel opened by the dot-grid launcher -->
 	<aside class="assistant card" id="assistant" aria-labelledby="rag-title" aria-hidden="true" inert>
 		<div class="assistant-head">
 			<h2 id="rag-title"><i class="fas fa-database"></i> Ask about Rohit <span class="tag">RAG</span></h2>
@@ -364,7 +364,7 @@
 
 		<div class="log" id="rag-log" aria-live="polite">
 			<div class="msg msg-bot">
-				<p class="msg-text">Hi! I'm RAG bot 🐘 Ask me anything about Rohit's experience, projects, skills, or sports. Every answer is retrieved from Rohit's profile and cites its sources.</p>
+				<p class="msg-text">Hi! I'm RAG bot. Ask me anything about Rohit's experience, projects, skills, or sports. Every answer is retrieved from Rohit's profile and cites its sources.</p>
 			</div>
 		</div>
 
@@ -401,7 +401,7 @@
 		</form>
 	</aside>
 
-	<!-- Elephant greeter: opens the chat panel; its bubble questions go through the same RAG pipeline -->
+	<!-- RAG bot launcher: an anime.js stagger dot grid that opens the chat panel; its bubble questions go through the same RAG pipeline -->
 	<div class="mascot" id="mascot">
 		<div class="mascot-bubble" id="mascot-bubble" role="status">
 			<button type="button" class="bubble-close" id="bubble-close" aria-label="Dismiss">&times;</button>
@@ -417,26 +417,7 @@
 			</form>
 		</div>
 		<button type="button" class="mascot-btn" id="mascot-btn" aria-label="Chat with RAG bot about Rohit" aria-controls="assistant" aria-expanded="false">
-			<svg viewBox="0 0 84 72" aria-hidden="true">
-				<path class="el-tail" d="M73 40 q7 2 6 10" fill="none" stroke="#7e88bd" stroke-width="2.5" stroke-linecap="round" />
-				<rect x="38" y="50" width="8" height="16" rx="3.5" fill="#6f79ae" />
-				<rect x="60" y="50" width="8" height="16" rx="3.5" fill="#6f79ae" />
-				<ellipse cx="54" cy="44" rx="21" ry="16" fill="#8b95c9" />
-				<rect x="44" y="52" width="8" height="15" rx="3.5" fill="#8b95c9" />
-				<rect x="65" y="52" width="8" height="15" rx="3.5" fill="#8b95c9" />
-				<path class="el-trunk" d="M17 33 C 8 37, 5 49, 9 56 C 11 60, 16 59, 15 55 C 12 49, 14 44, 22 41 Z" fill="#8b95c9" />
-				<circle cx="28" cy="31" r="16" fill="#97a1d4" />
-				<path d="M19 41 q-2 4 -6 4" fill="none" stroke="#f5f0e6" stroke-width="2.5" stroke-linecap="round" />
-				<g class="el-ear">
-					<ellipse cx="41" cy="31" rx="11" ry="14" fill="#a9b2e3" />
-					<ellipse cx="42" cy="32" rx="6.5" ry="9" fill="#e9a8c9" opacity="0.75" />
-				</g>
-				<g class="el-eye">
-					<circle cx="24" cy="27" r="2.6" fill="#0b1220" />
-					<circle cx="24.9" cy="26.1" r="0.9" fill="#fff" />
-				</g>
-				<circle cx="28" cy="36" r="2.6" fill="#f28fb8" opacity="0.5" />
-			</svg>
+			<span class="dot-grid" aria-hidden="true"></span>
 		</button>
 	</div>
 
@@ -446,7 +427,8 @@
 		<p></p>
 	</dialog>
 
+	<script src="https://cdn.jsdelivr.net/npm/animejs@4.5.0/dist/bundles/anime.umd.min.js"></script>
 	<script src="assets/js/rag.js?v=3"></script>
-	<script src="assets/js/site.js?v=13"></script>
+	<script src="assets/js/site.js?v=15"></script>
 </body>
 </html>

@@ -108,14 +108,67 @@
 		box.addEventListener('click', function (e) { if (e.target === box) box.close(); });
 	}
 
-	/* ---------------- elephant greeter + chat panel (reacts to rag.js events) ---------------- */
+	/* ---------------- RAG bot launcher + chat panel (reacts to rag.js events) ---------------- */
 	var mascot = document.getElementById('mascot');
 	var panel = document.getElementById('assistant');
 	if (mascot && panel) {
 		var bubble = document.getElementById('mascot-bubble');
 		var mascotBtn = document.getElementById('mascot-btn');
 		var input = document.getElementById('rag-input');
-		var happyTimer = null;
+
+		/* Dot grid driven by anime.js stagger: time staggering (each dot starts after its
+		   neighbour), value staggering (dots near the origin swell more), and timeline
+		   position staggering, all radiating from one origin dot. Idle breathes from the
+		   centre, thinking pulses fast, an answer bursts from a random dot, and hovering
+		   ripples from the dot under the pointer. Without anime.js (or with reduced
+		   motion) the dots simply stay still. */
+		var GRID = [9, 9];
+		var dotGrid = mascotBtn.querySelector('.dot-grid');
+		// Dots outside the inscribed circle stay in the grid (so stagger maths is unchanged) but are hidden.
+		var mid = (GRID[0] - 1) / 2;
+		for (var d = 0; d < GRID[0] * GRID[1]; d++) {
+			var dx = d % GRID[0] - mid, dy = Math.floor(d / GRID[0]) - mid;
+			dotGrid.appendChild(document.createElement('span')).className = Math.hypot(dx, dy) > mid + 0.35 ? 'dot is-off' : 'dot';
+		}
+		var dots = dotGrid.querySelectorAll('.dot');
+		var A = !reducedMotion && window.anime;
+		var motion = null, mode = '';
+
+		var MODES = {
+			idle: { peak: [1.7, 0.6], fade: [1, 0.35], step: 70, duration: 520, timeline: { loop: true, loopDelay: 900 } },
+			think: { peak: [2.1, 0.5], fade: [1, 0.25], step: 22, duration: 260, timeline: { loop: true } },
+			burst: { peak: [2.4, 0.9], fade: [1, 0.4], step: 32, duration: 380, timeline: {} },
+			hover: { peak: [2, 0.8], fade: [1, 0.45], step: 28, duration: 320, timeline: {} }
+		};
+
+		function play(name, from) {
+			if (!A) return;
+			if (motion) motion.revert();
+			mode = name;
+			var m = MODES[name], o = { grid: GRID, from: from === undefined ? 'center' : from };
+			var timeline = Object.assign({}, m.timeline);
+			// One-shot ripples hand back to the idle breathing when they finish.
+			if (!timeline.loop) timeline.onComplete = function () { play('idle'); };
+			motion = A.createTimeline(timeline).add(dots, {
+				scale: [{ to: A.stagger(m.peak, o) }, { to: 1 }],
+				opacity: [{ to: A.stagger(m.fade, o) }, { to: 1 }],
+				ease: 'inOutQuad',
+				duration: m.duration
+			}, A.stagger(m.step, o));
+		}
+
+		// Index of the dot nearest the pointer, so hover ripples start where the cursor enters.
+		function dotAt(e) {
+			var r = dotGrid.getBoundingClientRect();
+			var col = Math.min(GRID[0] - 1, Math.max(0, Math.floor((e.clientX - r.left) / r.width * GRID[0])));
+			var row = Math.min(GRID[1] - 1, Math.max(0, Math.floor((e.clientY - r.top) / r.height * GRID[1])));
+			return row * GRID[0] + col;
+		}
+
+		mascotBtn.addEventListener('pointerenter', function (e) {
+			if (mode === 'idle') play('hover', dotAt(e));
+		});
+		play('idle');
 
 		function setPanel(open) {
 			panel.classList.toggle('is-open', open);
@@ -210,14 +263,12 @@
 			// Questions from the bubble open the panel so the answer is visible.
 			if (!panel.classList.contains('is-open')) setPanel(true);
 			if (panel.classList.contains('is-composing')) setCompose(false);
-			clearTimeout(happyTimer);
-			mascot.classList.remove('is-happy');
 			mascot.classList.add('is-thinking');
+			play('think');
 		});
 		document.addEventListener('rag:answer', function () {
 			mascot.classList.remove('is-thinking');
-			mascot.classList.add('is-happy');
-			happyTimer = setTimeout(function () { mascot.classList.remove('is-happy'); }, 1200);
+			play('burst', Math.floor(Math.random() * dots.length));
 		});
 	}
 
