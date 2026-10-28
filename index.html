@@ -9,7 +9,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-	<link rel="stylesheet" href="assets/css/site.css?v=14" />
+	<link rel="stylesheet" href="assets/css/site.css?v=19" />
 	<script>
 		// Set endpoint to the deployed rag-worker URL to answer with Claude.
 		// Left empty, answers are composed in the browser from retrieved chunks.
@@ -89,18 +89,6 @@
 						<p>Claude classification inside pipelines, RAG chat and text-to-SQL apps, and multi-agent research tools.</p>
 					</article>
 				</div>
-
-				<div class="story">
-					<p>I've been drawn to data for as long as I can remember: the challenge of turning messy, disconnected information into something a business can act on. Today I build finance and operational pipelines for McKesson and deliver Power BI dashboards that replaced Excel reporting for finance leadership. Outside work I compete in badminton, most recently winning the <b>Frisco Open 2026</b>.</p>
-					<div class="flow" aria-label="How I build pipelines">
-						<span>Sources</span><i class="fas fa-angle-right"></i>
-						<span>Ingest + DQ</span><i class="fas fa-angle-right"></i>
-						<span>Bronze</span><i class="fas fa-angle-right"></i>
-						<span>Silver</span><i class="fas fa-angle-right"></i>
-						<span class="g">Gold</span><i class="fas fa-angle-right"></i>
-						<span>BI · RAG · Agents</span>
-					</div>
-				</div>
 			</div>
 
 			<!-- Experience -->
@@ -109,10 +97,14 @@
 					<p class="kicker">02 · Experience</p>
 					<h2>Where I've shipped pipelines</h2>
 				</header>
-				<ol class="timeline">
-					<li class="tl-item is-current">
-						<span class="tl-dot" aria-hidden="true"></span>
-						<article class="tl-card">
+				<div class="xp">
+					<div class="xp-list" role="tablist" aria-label="Roles" aria-orientation="vertical">
+						<button type="button" class="xp-role is-current" role="tab" id="role-0" aria-controls="role-panel-0" aria-selected="true"><span class="xp-title">Data Engineer</span><span class="xp-org">McKesson · via BigBlue InfoTech</span><time>Jan 2025 – Present</time></button>
+						<button type="button" class="xp-role" role="tab" id="role-1" aria-controls="role-panel-1" aria-selected="false" tabindex="-1"><span class="xp-title">Graduate Data Engineer</span><span class="xp-org">UMass Lowell</span><time>Dec 2022 – May 2024</time></button>
+						<button type="button" class="xp-role" role="tab" id="role-2" aria-controls="role-panel-2" aria-selected="false" tabindex="-1"><span class="xp-title">Graduate Research Assistant</span><span class="xp-org">UMass Lowell</span><time>Jun 2023 – Nov 2023</time></button>
+					</div>
+					<div class="xp-detail">
+						<article class="tl-card" role="tabpanel" id="role-panel-0" aria-labelledby="role-0">
 							<div class="tl-top">
 								<div>
 									<h3>Data Engineer</h3>
@@ -137,10 +129,7 @@
 							</ul>
 							<p class="chips"><span>Databricks</span><span>PySpark</span><span>Kafka</span><span>Delta Lake</span><span>Airflow</span><span>dbt</span><span>Claude API</span><span>Power BI</span></p>
 						</article>
-					</li>
-					<li class="tl-item">
-						<span class="tl-dot" aria-hidden="true"></span>
-						<article class="tl-card">
+						<article class="tl-card" role="tabpanel" id="role-panel-1" aria-labelledby="role-1" hidden>
 							<div class="tl-top">
 								<div>
 									<h3>Graduate Data Engineer</h3>
@@ -163,10 +152,7 @@
 							</ul>
 							<p class="chips"><span>Azure Data Factory</span><span>PySpark</span><span>Star schema · SCD2</span><span>Unity Catalog</span><span>Power BI</span></p>
 						</article>
-					</li>
-					<li class="tl-item">
-						<span class="tl-dot" aria-hidden="true"></span>
-						<article class="tl-card">
+						<article class="tl-card" role="tabpanel" id="role-panel-2" aria-labelledby="role-2" hidden>
 							<div class="tl-top">
 								<div>
 									<h3>Graduate Research Assistant</h3>
@@ -185,8 +171,8 @@
 							</ul>
 							<p class="chips"><span>Azure Databricks</span><span>PySpark</span><span>XGBoost</span><span>PyTorch</span></p>
 						</article>
-					</li>
-				</ol>
+					</div>
+				</div>
 			</div>
 
 			<!-- Projects -->
@@ -195,26 +181,27 @@
 					<p class="kicker">03 · Projects</p>
 					<h2>Things I've built</h2>
 				</header>
+				<div class="features">
 				<article class="feature">
 					<div class="feature-copy">
 						<p class="feature-tag"><i class="fas fa-star"></i> Featured · Data Engineering + AI</p>
 						<h3>AI-Powered Food Delivery Analytics Pipeline</h3>
-						<p>A daily Airflow pipeline loads <b>10M orders</b> from S3 into Snowflake, with dbt medallion layers and MERGE facts. A Claude step in the DAG classifies <b>300K reviews</b> by sentiment, topic, and key issue, feeding a dbt insights mart, and Streamlit apps add RAG chat and text-to-SQL over customer feedback and business metrics.</p>
+						<p>A daily Airflow pipeline loads <b>10M orders</b> from S3 into Snowflake with dbt medallion layers and MERGE facts. A Claude step classifies <b>300K reviews</b> into a dbt insights mart, served through Streamlit RAG chat and text-to-SQL apps.</p>
 						<p class="chips"><span>Airflow</span><span>S3</span><span>Snowflake</span><span>dbt</span><span>Claude</span><span>Streamlit</span></p>
 						<div class="feature-links">
 							<a class="btn btn-small btn-ghost" href="https://github.com/rangarohitnallamolu/food-delivery-analytics-pipeline" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
 						</div>
 					</div>
 					<div class="agent-flow" aria-label="Pipeline: S3 orders into an Airflow DAG, loaded into Snowflake with dbt layers, reviews classified by Claude, served to Streamlit RAG and text-to-SQL apps">
-						<span class="af-node"><i class="fas fa-database"></i> S3 · 10M orders</span>
+						<span class="af-node"><i class="fas fa-database"></i> S3</span>
 						<span class="af-link" aria-hidden="true"></span>
-						<span class="af-node"><i class="fas fa-project-diagram"></i> Airflow DAG</span>
+						<span class="af-node"><i class="fas fa-project-diagram"></i> Airflow</span>
 						<span class="af-link" aria-hidden="true"></span>
 						<span class="af-node"><i class="fas fa-layer-group"></i> Snowflake + dbt</span>
 						<span class="af-link" aria-hidden="true"></span>
-						<span class="af-node"><i class="fas fa-tags"></i> Claude review tagging</span>
+						<span class="af-node"><i class="fas fa-tags"></i> Claude tagging</span>
 						<span class="af-link" aria-hidden="true"></span>
-						<span class="af-node trade"><i class="fas fa-comments"></i> RAG chat · text-to-SQL</span>
+						<span class="af-node trade"><i class="fas fa-comments"></i> RAG · text-to-SQL</span>
 					</div>
 				</article>
 				<article class="feature">
@@ -241,6 +228,7 @@
 						<span class="af-node trade"><i class="fas fa-check"></i> Paper trade</span>
 					</div>
 				</article>
+				</div>
 				<h3 class="sub">More projects</h3>
 				<div class="project-grid">
 					<a class="project" href="https://github.com/nishatcherian/Group5_MultiLabel_OcularDiseaseClassificiation" target="_blank" rel="noopener">
@@ -459,6 +447,6 @@
 	</dialog>
 
 	<script src="assets/js/rag.js?v=3"></script>
-	<script src="assets/js/site.js?v=12"></script>
+	<script src="assets/js/site.js?v=13"></script>
 </body>
 </html>

@@ -2,12 +2,12 @@
 	'use strict';
 
 	/* ---------------- tabs (hash-addressable, arrow-key navigation) ---------------- */
-	var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+	var tabs = Array.prototype.slice.call(document.querySelectorAll('.tabs [role="tab"]'));
 	var indicator = document.querySelector('.tab-indicator');
 	var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 	function moveIndicator() {
-		var selected = document.querySelector('[role="tab"][aria-selected="true"]');
+		var selected = document.querySelector('.tabs [role="tab"][aria-selected="true"]');
 		if (!indicator || !selected) return;
 		indicator.style.width = selected.offsetWidth + 'px';
 		indicator.style.transform = 'translateX(' + selected.offsetLeft + 'px)';
@@ -70,6 +70,27 @@
 	});
 
 	window.portfolioTabs = { open: open };
+
+	/* ---------------- Experience: one role at a time, so the section fits one screen ---------------- */
+	var roles = Array.prototype.slice.call(document.querySelectorAll('.xp-list [role="tab"]'));
+	function selectRole(target, focus) {
+		roles.forEach(function (r) {
+			var selected = r === target;
+			r.setAttribute('aria-selected', selected);
+			r.tabIndex = selected ? 0 : -1;
+			document.getElementById(r.getAttribute('aria-controls')).hidden = !selected;
+		});
+		if (focus) target.focus();
+	}
+	roles.forEach(function (r, i) {
+		r.addEventListener('click', function () { selectRole(r); });
+		r.addEventListener('keydown', function (e) {
+			var dir = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0;
+			if (!dir) return;
+			e.preventDefault();
+			selectRole(roles[(i + dir + roles.length) % roles.length], true);
+		});
+	});
 
 	/* ---------------- lightbox ---------------- */
 	var box = document.getElementById('lightbox');
