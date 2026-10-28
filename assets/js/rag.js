@@ -38,13 +38,24 @@
 		school: ['education', 'university'],
 		college: ['education', 'university'],
 		degree: ['education', 'masters', 'bachelors'],
+		masters: ['master', 'education', 'degree'],
+		master: ['masters', 'education', 'degree'],
+		ms: ['masters', 'education'],
+		bachelors: ['bachelor', 'btech', 'education'],
+		graduated: ['graduation', 'completed', 'education'],
+		finished: ['completed', 'education'],
+		years: ['experience'],
+		experience: ['years'],
+		hiring: ['available', 'open'],
+		looking: ['available', 'open'],
+		where: ['location', 'based'],
 		study: ['education'],
 		studied: ['education'],
 		sport: ['badminton', 'cricket'],
 		hobby: ['hobbies', 'badminton', 'cricket'],
 		fun: ['hobbies', 'cricket'],
 		award: ['achievements', 'champion'],
-		hire: ['contact', 'email'],
+		hire: ['strengths', 'impact'],
 		reach: ['contact', 'email'],
 		email: ['contact'],
 		phone: ['contact'],
@@ -52,7 +63,7 @@
 		tech: ['skills', 'tools'],
 		tool: ['skills', 'tools'],
 		language: ['languages', 'python', 'scala'],
-		dashboard: ['dashboards', 'tableau', 'sac', 'power'],
+		dashboard: ['dashboards', 'power', 'bi'],
 		report: ['reporting', 'dashboards'],
 		quality: ['validation', 'reconciliation', 'checks'],
 		test: ['testing', 'validation'],
@@ -72,10 +83,12 @@
 	/* ---------------- text processing ---------------- */
 
 	function stem(t) {
-		if (t.length > 5 && /ing$/.test(t)) return t.slice(0, -3);
-		if (t.length > 4 && /ies$/.test(t)) return t.slice(0, -3) + 'y';
-		if (t.length > 4 && /ed$/.test(t)) return t.slice(0, -2);
-		if (t.length > 3 && /s$/.test(t) && !/ss$/.test(t)) return t.slice(0, -1);
+		if (t.length > 5 && /ing$/.test(t)) t = t.slice(0, -3);
+		else if (t.length > 4 && /ies$/.test(t)) t = t.slice(0, -3) + 'y';
+		else if (t.length > 4 && /ed$/.test(t)) t = t.slice(0, -2);
+		else if (t.length > 3 && /s$/.test(t) && !/ss$/.test(t)) t = t.slice(0, -1);
+		// "complete" and "completed" (or "graduate" and "graduated") share one stem.
+		if (t.length > 4 && /[^e]e$/.test(t)) t = t.slice(0, -1);
 		return t;
 	}
 
@@ -175,7 +188,8 @@
 		var ranked = bm25(index, q.terms);
 		var top = ranked[0] ? ranked[0].score : 0;
 		var hits = ranked.filter(function (r, i) {
-			return i < TOP_K && r.score > 0 && r.score >= top * 0.55;
+			// Supporting chunks must be nearly as relevant, or they drown out a direct answer.
+			return i < TOP_K && r.score > 0 && r.score >= top * 0.7;
 		});
 		return { query: q, hits: hits, topScore: top };
 	}

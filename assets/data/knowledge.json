@@ -1,6 +1,69 @@
 {
-  "version": "2026-10-27b",
+  "version": "2026-10-28",
   "chunks": [
+    {
+      "id": "faq-name",
+      "tab": "about",
+      "title": "About Rohit",
+      "keywords": "name who is full introduce introduction person based live lives location city",
+      "text": "Rohit's full name is Ranga Rohit Nallamolu. Rohit is a Data Engineer based in Dallas, TX, with 3+ years building data pipelines that power analytics and AI."
+    },
+    {
+      "id": "faq-current",
+      "tab": "experience",
+      "title": "Current role",
+      "keywords": "currently now present today working where job employer company client mckesson bigblue infotech position title mckesson mckesson responsibilities duties",
+      "text": "Rohit currently works as a Data Engineer at BigBlue InfoTech, on the client McKesson, in Dallas, TX (January 2025 to present). The work covers PySpark ELT pipelines on Databricks, Kafka streaming into Delta Lake, finance data marts, data quality automation, and Power BI dashboards for finance leadership."
+    },
+    {
+      "id": "faq-years",
+      "tab": "about",
+      "title": "Years of experience",
+      "keywords": "how many years experience long working industry professional senior level total experience 3+ three",
+      "text": "Rohit has 3+ years of data engineering experience: Data Engineer at BigBlue InfoTech for McKesson since January 2025, and before that Graduate Data Engineer (Dec 2022 to May 2024) and Graduate Research Assistant (Jun 2023 to Nov 2023) at UMass Lowell."
+    },
+    {
+      "id": "faq-available",
+      "tab": "about",
+      "title": "Open to roles",
+      "keywords": "open available looking job search hiring opportunities roles new position interested recruit recruiter relocate location dallas texas hire contact reach",
+      "text": "Yes. Rohit is open to Data Engineering roles and is based in Dallas, TX. The quickest way to reach Rohit is n.rangarohit@gmail.com or +1 978 569 7460, or the Message button in this chat."
+    },
+    {
+      "id": "faq-strengths",
+      "tab": "about",
+      "title": "Strengths",
+      "keywords": "why hire strengths strong best good at fit value bring impact results achievements accomplishments highlights proud",
+      "text": "Rohit's strengths are building reliable batch and streaming pipelines and proving their impact: cutting month-end close prep time by 20%, lowering Databricks compute cost by 15%, and saving 40+ hours of manual work per month with automated checks and Power BI dashboards. Rohit also brings hands-on AI work, with Claude classification inside pipelines, RAG and text-to-SQL apps, and a multi-agent stock research platform."
+    },
+    {
+      "id": "faq-masters",
+      "tab": "education",
+      "title": "Master's degree",
+      "keywords": "completed complete finished finish graduated graduate graduation masters master ms m.s. degree postgraduate grad school umass lowell computer science when year 2024 done",
+      "text": "Yes. Rohit completed a Master of Science in Computer Science at the University of Massachusetts Lowell, studying from September 2022 and graduating in May 2024. During the degree Rohit also worked as a Graduate Data Engineer and a Graduate Research Assistant at UMass Lowell."
+    },
+    {
+      "id": "faq-bachelors",
+      "tab": "education",
+      "title": "Bachelor's degree",
+      "keywords": "bachelors bachelor btech b.tech undergraduate undergrad degree christ university bangalore india 2021 completed graduated",
+      "text": "Rohit completed a Bachelor of Technology in Computer Science at Christ University in Bangalore, India, from August 2017 to May 2021."
+    },
+    {
+      "id": "faq-cloud",
+      "tab": "skills",
+      "title": "Cloud experience",
+      "keywords": "cloud aws azure snowflake databricks gcp platform experience s3 rds cognito data lake data factory",
+      "text": "Rohit works mostly on Databricks, with Azure (Data Lake, Data Factory) at UMass Lowell and AWS (S3, RDS, Cognito) in the food delivery and StockSense projects. Snowflake is the warehouse in the food delivery pipeline."
+    },
+    {
+      "id": "faq-dashboards",
+      "tab": "experience",
+      "title": "Dashboards & BI",
+      "keywords": "dashboards dashboard power bi reporting reports visualization bi built finance leadership enrollment p&l opex headcount",
+      "text": "Rohit builds dashboards in Power BI. At McKesson, Rohit delivered P&L, OPEX, and headcount dashboards to finance leadership, replacing Excel reports and saving 25+ hours per month. At UMass Lowell, Rohit created enrollment, course performance, and tuition revenue dashboards for department leaders. Rohit also works with SAP Analytics Cloud."
+    },
     {
       "id": "summary",
       "tab": "about",
@@ -208,7 +271,7 @@
       "id": "contact",
       "tab": "about",
       "title": "Contact",
-      "keywords": "contact email reach hire phone linkedin github resume cv connect message location based dallas",
+      "keywords": "contact email reach phone linkedin github resume cv connect message location based dallas",
       "text": "You can reach Rohit at n.rangarohit@gmail.com or +1 978 569 7460, and connect on LinkedIn (linkedin.com/in/ranga-rohit-nallamolu) or GitHub (github.com/rangarohitnallamolu). Rohit's current role is based in Dallas, TX. The resume is available from the Resume button at the top of this page."
     }
   ]
